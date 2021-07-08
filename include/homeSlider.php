@@ -2,7 +2,7 @@
 
     <!-- Slider Shape Start -->
     <div class="slider-shape">
-        <img class="shape-1 animation-round" src="assets/images/shape/shape-8.png" alt="Shape">
+        <img class="shape-1 animation-round" src="assets/images/shape/shape-51.png" width="100px" alt="Shape">
     </div>
     <!-- Slider Shape End -->
 
@@ -10,10 +10,10 @@
 
         <!-- Slider Content Start -->
         <div class="slider-content">
-            <h4 class="sub-title">Start your favourite course</h4>
-            <h2 class="main-title">Now learning from anywhere, and build your <span>bright career.</span></h2>
-            <p>It has survived not only five centuries but also the leap into electronic typesetting.</p>
-            <a class="btn btn-primary btn-hover-dark" href="#">Start A Course</a>
+            <h4 class="sub-title">Better Job. Better Talent</h4>
+            <h2 class="main-title">LET EMPLOYERS FIND YOU <span>REGISTER NOW</span></h2>
+            <p>Make the most out of your job search and cut your time as job seeker short.</p>
+            <a class="btn btn-primary btn-hover-dark" href="#">Login</a>
         </div>
         <!-- Slider Content End -->
 
@@ -22,13 +22,13 @@
     <!-- Slider Courses Box Start -->
     <div class="slider-courses-box">
 
-        <img class="shape-1 animation-left" src="assets/images/shape/shape-5.png" alt="Shape">
+        <img class="shape-1 animation-left" src="assets/images/shape/shape-50.png" alt="Shape">
 
         <div class="box-content">
             <div class="box-wrapper">
                 <i class="flaticon-open-book"></i>
-                <span class="count">1,235</span>
-                <p>courses</p>
+                <span class="count">10,235</span>
+                <p>Jobs</p>
             </div>
         </div>
 
@@ -42,8 +42,8 @@
 
         <div class="box-rating">
             <div class="box-wrapper">
-                <span class="count">9.8 <i class="flaticon-star"></i></span>
-                <p>Rating (86K)</p>
+                <span class="count">56,011<i class="flaticon-star"></i></span>
+                <p>Freelancer</p>
             </div>
         </div>
 
@@ -55,21 +55,12 @@
     <!-- Slider Images Start -->
     <div class="slider-images">
         <div class="images">
-            <img src="assets/images/slider/slider-1.png" alt="Slider">
+            <!-- <img src="assets/images/slider/slider-1.png" alt="Slider"> -->
         </div>
     </div>
     <!-- Slider Images End -->
 
     <!-- Slider Video Start -->
-    <div class="slider-video">
-        <img class="shape-1" src="assets/images/shape/shape-9.png" alt="Shape">
 
-        <div class="video-play">
-            <img src="assets/images/shape/shape-10.png" alt="Shape">
-            <a href="https://www.youtube.com/watch?v=BRvyWfuxGuU" class="play video-popup"><i
-                    class="flaticon-play"></i></a>
-        </div>
-    </div>
-    <!-- Slider Video End -->
 
 </div>

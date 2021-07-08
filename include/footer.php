@@ -122,8 +122,7 @@
                     <a href="#">Security</a>
                 </div>
                 <div class="copyright-text">
-                    <p>&copy; 2021 <span> Edule </span> Made with <i class="icofont-heart-alt"></i> by <a
-                            href="#">Codecarnival</a></p>
+                    <p>&copy; 2021 <span> ፊደልJobs </span> Developed by <a href="#">BlackCoders</a></p>
                 </div>
             </div>
             <!-- Footer Copyright End -->

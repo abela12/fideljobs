@@ -9,15 +9,16 @@
 
                 <!-- Header Top Left Start -->
                 <div class="header-top-left">
-                    <p>All course 28% off for <a href="#">Liberian people’s.</a></p>
+                    <p>Find any Jobs 100% free <a href="#">For anyone</a></p>
                 </div>
                 <!-- Header Top Left End -->
 
                 <!-- Header Top Medal Start -->
                 <div class="header-top-medal">
                     <div class="top-info">
-                        <p><i class="flaticon-phone-call"></i> <a href="tel:9702621413">(970) 262-1413</a></p>
-                        <p><i class="flaticon-email"></i> <a href="mailto:address@gmail.com">address@gmail.com</a></p>
+                        <p><i class="flaticon-phone-call"></i> <a href="tel:0911309125">(251) 91130912</a></p>
+                        <p><i class="flaticon-email"></i> <a
+                                href="mailto:fideljobs@support.com">fideljobs@support.com</a></p>
                     </div>
                 </div>
                 <!-- Header Top Medal End -->
@@ -48,8 +49,8 @@
             <div class="header-main-wrapper">
 
                 <!-- Header Logo Start -->
-                <div class="header-logo">
-                    <a href="index.html"><img src="assets/images/logo.png" alt="Logo"></a>
+                <div class="header-logo w-25">
+                    <a href="index.html"><img width="144px" height="77px" src="assets/images/del.png" alt="Logo"></a>
                 </div>
                 <!-- Header Logo End -->
 
@@ -58,11 +59,8 @@
                     <ul class="nav-menu">
                         <li><a href="index.html">Home</a></li>
                         <li>
-                            <a href="#">All Course</a>
-                            <ul class="sub-menu">
-                                <li><a href="courses.html">Courses</a></li>
-                                <li><a href="courses-details.html">Courses Details</a></li>
-                            </ul>
+                            <a href="findjobs.php">Find Jobs</a>
+
                         </li>
                         <li>
                             <a href="#">Pages </a>
