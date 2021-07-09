@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
             while ($row = mysqli_fetch_assoc($result)) {
                 // $found_user  = mysqli_fetch_array($result);
 
-                //fill the result to session variable
+                //fill the result to session variable authentication
                 $_SESSION['id']  = $row['id'];
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['email'] = $row['email'];
