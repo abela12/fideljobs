@@ -8,7 +8,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Kebele Management System</title>
+    <title>FidelJobs</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="./assets/css/dashlite.css?ver=2.4.0">
     <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=2.4.0">

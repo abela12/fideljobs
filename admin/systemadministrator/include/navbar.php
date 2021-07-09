@@ -19,7 +19,7 @@
                             <em class="icon ni ni-card-view"></em>
                         </div>
                         <div class="nk-news-text">
-                            <p>Kebele Management System</p>
+                            <p>Fidel Jobs</p>
                             <em class="icon ni ni-external"></em>
                         </div>
                     </a>
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="user-info d-none d-md-block">
                                     <div class="user-status"><?php echo $_SESSION['role']; ?></div>
-                                    <div class="user-name dropdown-indicator"><?php echo $_SESSION['fullName']; ?></div>
+                                    <div class="user-name dropdown-indicator"><?php echo $_SESSION['username']; ?></div>
                                 </div>
                             </div>
                         </a>
@@ -48,18 +48,10 @@
                                         <img src="./images/<?php echo  $_SESSION['userPhoto']; ?>" alt="">
                                     </div>
                                     <div class="user-name">
-                                        <span class="tb-lead"><?php echo $_SESSION['userName']; ?></span>
+                                        <span class="tb-lead"><?php echo $_SESSION['username']; ?></span>
                                     </div>
                                 </div>
-                                <!-- <div class="user-card">
-                                    <div class="user-avatar">
-                                        <img src="../images/<?php echo  $_SESSION['userPhoto']; ?>" alt="">
-                                    </div>
-                                    <div class="user-info">
-                                        <span class="lead-text">Resident</span>
-                                        <span class="sub-text">ashu@kebelemanagementsystem.com</span>
-                                    </div>
-                                </div> -->
+
                             </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
