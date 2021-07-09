@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
     echo  $username = $_POST['userName'];
     echo $password = $_POST['password'];
 
-    $result = mysqli_query($conn, "SELECT `id`, `fullName`, `phoneNumber`, `age`, `nationality`, `woreda`, `kebele`, `role`, `jobLocation`, `userPhoto`, `username`, `password`, `date` FROM `user` WHERE `username` = '$username' AND `password` = '$password'");
+    $result = mysqli_query($conn, "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password'");
 
     // $result = mysqli_query($conn, $sql);
 
@@ -24,26 +24,21 @@ if (isset($_POST['login'])) {
 
                 //fill the result to session variable
                 $_SESSION['id']  = $row['id'];
-                $_SESSION['userName'] = $row['username'];
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['email'] = $row['email'];
                 $_SESSION['userPhoto'] = $row['userPhoto'];
-                $_SESSION['fullName'] = $row['fullName'];
-                $_SESSION['phoneNumber'] = $row['phoneNumber'];
-                $_SESSION['nationality'] = $row['nationality'];
-                $_SESSION['jobLocation'] = $row['jobLocation'];
+
+
 
                 $role  =  $row['role'];
-                $_SESSION['role'] = $rol;
+                $_SESSION['role'] = $role;
                 // $_SESSION['status'] =
             }
-            if ($role == "systemadministrator") {
+            if ($role == "admin") {
                 header("location:systemadministrator/index.php");
                 $demo = "system administrator";
-            } else if ($role == "chairMan") {
-                header("location:chairman/index.php");
-            } else if ($role == "recordOfficer") {
-                header("location:recordofficer/index.php");
-            } else if ($role == "resident") {
-                header("location:resident/index.php");
+            } else if ($role == "employer") {
+                header("location:employer/index.php");
             }
         } else {
             //IF theres no result
