@@ -27,14 +27,14 @@
 
         <!-- Slider End -->
 
-        <!-- All Jobs Start -->
+        <!-- All Freelancer Start -->
         <div class="section section-padding-02">
             <div class="container">
 
-                <!-- Search Jobs Top Start -->
+                <!-- Search Freelancer Top Start -->
                 <?php include 'include/jobSearch.php' ?>
 
-                <!-- Search Jobs Top End -->
+                <!-- Search Freelancer Top End -->
                 <?php include 'include/jobCategory.php' ?>
 
 
@@ -42,7 +42,7 @@
 
             </div>
         </div>
-        <!-- All Courses End -->
+        <!-- All Freelancer End -->
 
         <!-- Call to Action Start -->
         <div class="section section-padding-02">
@@ -61,24 +61,29 @@
         <!-- How It Work End -->
 
         <!-- Download App Start Promotion Banner -->
-        <?php include 'include/promotionBanner.php' ?>
+        <?php //include 'include/promotionBanner.php' 
+        ?>
         <!-- Download App End -->
 
         <!-- Testimonial End -->
-        <?php include 'include/testimonial.php' ?>
+        <?php //include 'include/testimonial.php' 
+        ?>
         <!-- Testimonial End -->
 
         <!-- Brand Logo Start And Our Clients -->
-        <?php include 'include/ourClients.php' ?>
+        <?php //include 'include/ourClients.php' 
+        ?>
 
         <!-- Brand Logo End And Our Clients -->
 
         <!-- Blog Start -->
-        <?php include 'include/blogAndNews.php' ?>
+        <?php //include 'include/blogAndNews.php' 
+        ?>
         <!-- Blog End -->
 
         <!-- Footer Start  -->
-        <?php include 'include/footer.php' ?>
+        <?php //include 'include/footer.php' 
+        ?>
 
         <!-- Footer End -->
 
