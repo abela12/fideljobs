@@ -3,7 +3,7 @@
 
         <!-- Section Title Start -->
         <div class="section-title shape-03 text-center">
-            <h5 class="sub-title">Over 1,235+ Course</h5>
+            <h5 class="sub-title">Over 1200+ Jobs</h5>
             <h2 class="main-title">How It <span> Work?</span></h2>
         </div>
         <!-- Section Title End -->
@@ -19,8 +19,9 @@
                     <i class="flaticon-transparency"></i>
                 </div>
                 <div class="work-content">
-                    <h3 class="title">Find Your Course</h3>
-                    <p>It has survived not only centurie also leap into electronic.</p>
+                    <h3 class="title">Find Your Job</h3>
+                    <p>Set Up Job Alerts, Get Right Jobs
+                        Create Alert For Your Job Searches</p>
                 </div>
             </div>
             <!-- Single Work End -->
@@ -39,8 +40,9 @@
                     <i class="flaticon-forms"></i>
                 </div>
                 <div class="work-content">
-                    <h3 class="title">Book A Seat</h3>
-                    <p>It has survived not only centurie also leap into electronic.</p>
+                    <h3 class="title">Add Your CV</h3>
+                    <p>Create CV Using Our CV Builder
+                        Create Your Profile and Be Discovered</p>
                 </div>
             </div>
             <!-- Single Work End -->
@@ -59,8 +61,9 @@
                     <i class="flaticon-badge"></i>
                 </div>
                 <div class="work-content">
-                    <h3 class="title">Get Certificate</h3>
-                    <p>It has survived not only centurie also leap into electronic.</p>
+                    <h3 class="title">Get Job</h3>
+                    <p>Apply for Jobs From Anywhere
+                        Receive Job Offers</p>
                 </div>
             </div>
             <!-- Single Work End -->
