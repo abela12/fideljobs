@@ -9,8 +9,8 @@
 
             <!-- Section Title Start -->
             <div class="section-title shape-02">
-                <h5 class="sub-title">Become A Instructor</h5>
-                <h2 class="main-title">You can join with Edule as <span>a instructor?</span></h2>
+                <h5 class="sub-title">Become A Freelancer</h5>
+                <h2 class="main-title">You can join with as freelancer <span>a ፊደልJobs?</span></h2>
             </div>
             <!-- Section Title End -->
 
