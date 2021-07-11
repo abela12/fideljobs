@@ -5,10 +5,10 @@
             <div class="slider-item">
                 <div class="nk-feature nk-feature-center">
                     <div class="nk-feature-img">
-                        <img class="round" src="./images/kmsbanner.png" srcset="./images/kmsbanner.png 2x" alt="">
+                        <img class="round" src="./images/fidelslide1.png" srcset="./images/fidelslide1.png 2x" alt="">
                     </div>
                     <div class="nk-feature-content py-4 p-sm-5">
-                        <h4>Kebel Management System</h4>
+                        <h4>Fidel Job Portal System</h4>
                         <p>Finally, we would like to thank the Head and all the teaching staffs of computer science
                             department who have contributed greatly to the success of this research project.</p>
                     </div>
@@ -17,10 +17,10 @@
             <div class="slider-item">
                 <div class="nk-feature nk-feature-center">
                     <div class="nk-feature-img">
-                        <img class="round" src="./images/kmsbanner.png" srcset="./images/kmsbanner.png 2x" alt="">
+                        <img class="round" src="./images/fidelslide1.png" srcset="./images/fidelslide1.png 2x" alt="">
                     </div>
                     <div class="nk-feature-content py-4 p-sm-5">
-                        <h4>KMS</h4>
+                        <h4>Fidel Job Portal System</h4>
                         <p>Finally, we would like to thank the Head and all the teaching staffs of computer science
                             department who have contributed greatly to the success of this research project.</p>
                     </div>
@@ -29,10 +29,11 @@
             <div class="slider-item">
                 <div class="nk-feature nk-feature-center">
                     <div class="nk-feature-img">
-                        <img class="round" src="./images/slides/promo-c.png" srcset="./images/kmsbanner.png 2x" alt="">
+                        <img class="round" src="./images/slides/promo-c.png" srcset="./images/fidelslide1.png 2x"
+                            alt="">
                     </div>
                     <div class="nk-feature-content py-4 p-sm-5">
-                        <h4>KMS</h4>
+                        <h4>Fidel Job Portal System</h4>
                         <p>Finally, we would like to thank the Head and all the teaching staffs of computer science
                             department who have contributed greatly to the success of this research project.</p>
                     </div>
