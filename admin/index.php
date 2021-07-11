@@ -74,7 +74,7 @@ window.location = "index.php";
                                     <div class="nk-block-head-content">
                                         <h5 class="nk-block-title">Sign-In</h5>
                                         <div class="nk-block-des">
-                                            <p>Access the kebele panel using your email and passcode.</p>
+                                            <p>Access the fideljobs panel using your username and passcode.</p>
                                         </div>
                                     </div>
                                 </div><!-- .nk-block-head -->
