@@ -50,16 +50,20 @@
 
                 <!-- Header Logo Start -->
                 <div class="header-logo w-25">
-                    <a href="index.html"><img width="144px" height="77px" src="assets/images/del.png" alt="Logo"></a>
+                    <a href="index.php"><img width="144px" height="77px" src="assets/images/del.png" alt="Logo"></a>
                 </div>
                 <!-- Header Logo End -->
 
                 <!-- Header Menu Start -->
                 <div class="header-menu d-none d-lg-block">
                     <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li>
-                            <a href="findjobs.php">Find Jobs</a>
+                            <a href="find_jobs.php">Jobs</a>
+
+                        </li>
+                        <li>
+                            <a href="find_freelancer.php">Candidate</a>
 
                         </li>
 
@@ -76,8 +80,8 @@
                 <!-- Header Sing In & Up Start -->
                 <div class="header-sign-in-up d-none d-lg-block">
                     <ul>
-                        <li><a class="sign-in" href="login.html">JobSeeker</a></li>
-                        <li><a class="sign-up" href="register.html">Employer</a></li>
+                        <li><a class="sign-in" href="register_jobseeker.php">JobSeeker</a></li>
+                        <li><a class="sign-up" href="register_employer.php">Employer</a></li>
                     </ul>
                 </div>
                 <!-- Header Sing In & Up End -->
