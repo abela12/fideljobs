@@ -13,7 +13,7 @@
             <h4 class="sub-title">Better Job. Better Talent</h4>
             <h2 class="main-title">LET EMPLOYERS FIND YOU <span>REGISTER NOW</span></h2>
             <p>Make the most out of your job search and cut your time as job seeker short.</p>
-            <a class="btn btn-primary btn-hover-dark" href="#">Login</a>
+            <a class="btn btn-primary btn-hover-dark" href="login.php">Login</a>
         </div>
         <!-- Slider Content End -->
 
