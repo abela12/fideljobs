@@ -65,8 +65,8 @@
             <div class="container-fluid">
                 <div class="page-titles">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Datatable</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Jobs</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Saved Jobs</a></li>
                     </ol>
                 </div>
                 <!-- row -->
@@ -76,7 +76,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Basic Datatable</h4>
+                                <h4 class="card-title">Saved Jobs List</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -86,7 +86,7 @@
                                                 <th>Name</th>
                                                 <th>Position</th>
                                                 <th>Office</th>
-                                                <th>Age</th>
+
                                                 <th>Start date</th>
                                                 <th>Salary</th>
                                             </tr>
@@ -94,20 +94,20 @@
                                         <tbody>
 
                                             <tr>
-                                                <td>Zenaida Frank</td>
+                                                <td>Zemen Bank</td>
                                                 <td>Software Engineer</td>
-                                                <td>New York</td>
-                                                <td>63</td>
-                                                <td>2010/01/04</td>
-                                                <td>$125,250</td>
+                                                <td>Addis Abeba</td>
+
+                                                <td>2021/01/04</td>
+                                                <td>15025</td>
                                             </tr>
                                             <tr>
-                                                <td>Zenaida Frank</td>
-                                                <td>Software Engineer</td>
-                                                <td>New York</td>
-                                                <td>63</td>
-                                                <td>2010/01/04</td>
-                                                <td>$125,250</td>
+                                                <td>ጸሃይ ሪል ስቴት</td>
+                                                <td>Web Developer</td>
+                                                <td>Remote</td>
+
+                                                <td>2021/01/04</td>
+                                                <td>20,000</td>
                                             </tr>
 
 
@@ -117,7 +117,7 @@
                                                 <th>Name</th>
                                                 <th>Position</th>
                                                 <th>Office</th>
-                                                <th>Age</th>
+
                                                 <th>Start date</th>
                                                 <th>Salary</th>
                                             </tr>
