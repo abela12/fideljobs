@@ -63,7 +63,7 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <?php include 'include/mainContent.php' ?>
+        <?php include 'include/best-matches-content.php' ?>
         <!--**********************************
             Content body end
         ***********************************-->
