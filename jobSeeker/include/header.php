@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="assets/vendor/chartist/css/chartist.min.css">
 <link href="assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
+<!-- Datatable -->
+<link href="assets/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 <!-- Main Template Style -->
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
