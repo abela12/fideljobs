@@ -35,7 +35,7 @@
 
                 </ul>
             </li>
-            <li><a href="logout.php" class="has-arrow ai-icon"> <i class="lni lni-power-switch"></i>
+            <li><a href="../logout.php" class="has-arrow ai-icon"> <i class="lni lni-power-switch"></i>
                     Logout</a></li>
 
         </ul>
