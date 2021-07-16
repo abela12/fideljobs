@@ -52,8 +52,8 @@
                                 <div class="single-form">
                                     <button class="btn btn-primary btn-hover-dark w-100">Create an
                                         account</button>
-                                    <!-- <a class="btn btn-secondary btn-outline w-100" href="#">Sign up with
-                                        Google</a> -->
+
+                                    <a class="btn btn-secondary btn-outline w-100" href="login.php">Login</a>
                                 </div>
                                 <!-- Single Form End -->
                             </form>
