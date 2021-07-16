@@ -8,8 +8,8 @@
 <?php
 $demo = "not working";
 if (isset($_POST['login'])) {
-    echo  $username = $_POST['username'];
-    echo $password = $_POST['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
     $result = mysqli_query($conn, "SELECT users.id as id, `username`, `email`, `password`, role.roleType as role, `userPhoto`, `role_id`, `status`, `date` 
     FROM `users` INNER JOIN role on users.role_id = role.id WHERE `username` = '$username' AND `password` = '$password'");
