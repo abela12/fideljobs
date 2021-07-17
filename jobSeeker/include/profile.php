@@ -18,7 +18,7 @@
         <img src="images/profile/profile.png" width="140" height="140" alt="" />
     </div>
     <div class="profile-info-bx mb-4">
-        <h4 class="mb-1 fs-22">Avel Coder</h4>
+        <h4 class="mb-1 fs-22"><?php echo $_SESSION['username'] ?></h4>
         <span>Web Developer</span>
     </div>
 
