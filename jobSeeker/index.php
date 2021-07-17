@@ -4,6 +4,13 @@
 <head>
     <?php include 'include/header.php'
     ?>
+    <?php include '../database/database.php' ?>
+    <?php include '../include/session.php' ?>
+    <?php
+    //login confirmation
+    // confirm_logged_in();
+
+    ?>
     <style>
     .items-link a {
         color: #8b92dd;
