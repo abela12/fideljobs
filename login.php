@@ -4,6 +4,8 @@
 
 <?php include 'include/header.php' ?>
 <?php include 'database/database.php' ?>
+<?php include 'include/session.php' ?>
+
 
 <?php
 $demo = "not working";
