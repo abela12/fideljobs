@@ -1,4 +1,5 @@
 <div class="profile card card-body px-3 pt-3 pb-0">
+    <h1>hello</h1>
     <div class="profile-head">
         <div class="photo-content">
             <div class="cover-photo"></div>
@@ -29,7 +30,9 @@
                         </svg></a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-item"><i class="fa fa-user-circle text-primary mr-2"></i> View profile</li>
-                        <li class="dropdown-item"><i class="fa fa-camera text-primary mr-2"></i> Update Cover Photo
+
+                        <li class="dropdown-item" data-toggle="modal" data-target="#basicModal"><i
+                                class="fa fa-camera text-primary mr-2"></i> Update Cover Photo
                         </li>
 
 
