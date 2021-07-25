@@ -3,6 +3,8 @@
 
 <head>
     <?php include 'include/header.php' ?>
+    <?php include '../database/database.php' ?>
+    <?php include '../include/session.php' ?>
     <style>
     .profile ul li {
         text-transform: uppercase;
@@ -94,7 +96,33 @@
                                                 data-dismiss="modal"><span>&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">Update Cover Pic</div>
+                                        <div class="modal-body">Update Cover Pic
+
+                                            <?php
+                                            $sql = mysqli_query($conn, "SELECT * FROM `users` WHERE `role_id` = 2");
+                                            while ($row = mysqli_fetch_assoc($sql)) {
+                                                $username = $row['username'];
+                                            ?>
+                                            <div class="form-group">
+                                                <label for="name">Username</label>
+                                                <input value="<?php echo $username ?>" type="text" name="" id=""
+                                                    class="form-control">
+                                            </div>
+                                            <?php
+                                            }
+
+                                            ?>
+                                            <div class="form-group users-list">
+                                                <label for="userPhoto">User Image</label>
+                                                <input type="file" name="userPhoto" class="form-control-file"
+                                                    id="userPhoto" accept="image/*" onchange="preview_image(event)">
+                                                <img class="img-thumbnail" id="output_image" style="
+        height: auto;
+        max-width: 300px;" />
+                                            </div>
+
+
+                                        </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger light"
                                                 data-dismiss="modal">Close</button>
@@ -147,6 +175,16 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'include/script.php' ?>
+    <script type='text/javascript'>
+    function preview_image(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+    </script>
 
 
 
