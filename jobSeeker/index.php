@@ -90,7 +90,8 @@
             Content body start
         ***********************************-->
 
-        <?php include 'include/profile.php' ?>
+        <?php include 'include/profile.php'
+        ?>
 
         <!--**********************************
             Content body start
