@@ -10,28 +10,32 @@
                         <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">Update Cover Pic
-
-                        <?php
-                        $sql = mysqli_query($conn, "SELECT * FROM `users` WHERE `role_id` = 2");
-                        while ($row = mysqli_fetch_assoc($sql)) {
-                            $username = $row['username'];
-                        ?>
+                    <div class="modal-body">
+                        <form action="" method="post">
                             <div class="form-group">
-                                <label for="name">Username</label>
-                                <input value="<?php echo $username ?>" type="text" name="" id="" class="form-control">
+                                <input type="text" name="" id="" class="form-control input-default" placeholder="Title">
                             </div>
-                        <?php
-                        }
+                            <div class="post-input">
+                                <textarea name="textarea" id="textarea" cols="30" rows="10" class="form-control bg-transparent" placeholder="Please type what you want...."></textarea>
 
-                        ?>
-                        <div class="form-group users-list">
-                            <label for="userPhoto">User Image</label>
-                            <input type="file" name="userPhoto" class="form-control-file" id="userPhoto" accept="image/*" onchange="preview_image(event)">
-                            <img class="img-thumbnail" id="output_image" style="
-        height: auto;
-        max-width: 300px;" />
-                        </div>
+                            </div>
+
+                            <div class="form-group users-list">
+                                <label for="userPhoto">Cover Photo(Recommend 1600 X 450)</label>
+                                <input type="file" name="userPhoto" class="form-control-file" id="userPhoto" accept="image/*" onchange="preview_image(event)">
+                                <img class="img-thumbnail" id="output_image" style="height: auto; max-width: 300px;" />
+                            </div>
+                            <div class="form-group users-list">
+                                <label for="userPhoto">Profile Photo(Recommend 196 X 196)</label>
+                                <input type="file" name="profile_pic" class="form-control-file" id="profile_pic" accept="image/*" onchange="cover_image(event)">
+                                <img class="rounded-circle" id="img" width="150px" />
+                            </div>
+                        </form>
+
+
+
+
+
 
 
                     </div>

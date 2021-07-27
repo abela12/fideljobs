@@ -21,3 +21,24 @@
 <!-- Datatable -->
 <script src="assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
 <script src="assets/js/plugins-init/datatables.init.js"></script>
+<script type='text/javascript'>
+    function preview_image(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('output_image');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+<script type='text/javascript'>
+    function cover_image(event) {
+
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = output = document.getElementById('img');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
