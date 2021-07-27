@@ -1,6 +1,40 @@
 <?php
+$jobseeker_id = $_SESSION['id'];
+$username = $_SESSION['username'];
 if (isset($_POST['upload'])) {
-    echo "It works";
+    $title = $_POST['title'];
+    $aboutYourSelf = $_POST['aboutYourSelf'];
+    $coverImg = $_FILES['coverImage']['name'];
+    $profileImg = $_FILES['profileImage']['name'];
+    $sex = $_POST['gender'];
+    $date = $_POST['date'];
+
+    $fileExt = explode('.', $coverImg);
+    $fileActExt = strtolower(end($fileExt));
+    $allowImg = array('png', 'jpeg', 'jpg');
+    $fileNew = rand() . "abel" . "." . $fileActExt;  // rand function create the rand number 
+    $coverImage = 'assets/images/jobseeker/' . $fileNew;
+
+    $fileExtP = explode('.', $profileImg);
+    $fileActExtP = strtolower(end($fileExtP));
+    // $allowImg = array('png', 'jpeg', 'jpg');
+    $fileNewP = rand() . "abel" . "." . $fileActExtP;  // rand function create the rand number 
+    $profileImage = 'assets/images/jobseeker/' . $fileNewP;
+    if (in_array($fileActExt, $allowImg)) {
+        if ($_FILES['coverImage']['size'] > 0  && $_FILES['coverImage']['error'] == 0) {
+            $query = mysqli_query($conn, "INSERT INTO `jobseekerbio`(`jobseeker_id`, `coverImage`, `profileImage`, `Title`, `aboutYourSelf`, `Sex`, `dateOfBirth`) VALUES ('$jobseeker_id','$coverImage','$profileImage','$title','$aboutYourSelf','$sex','$date')");
+            if ($query) {
+                move_uploaded_file($_FILES['coverImage']['tmp_name'], $coverImage);
+                move_uploaded_file($_FILES['profileImage']['tmp_name'], $profileImage);
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
 }
 ?>
 <div class="col-xl-6">
@@ -19,10 +53,10 @@ if (isset($_POST['upload'])) {
                         <div class="modal-body">
                             <!-- Enter a single sentence description of your professional skills/experience (e.g. Expert Web Designer with Ajax experience) -->
                             <div class="form-group">
-                                <input type="text" name="" id="" class="form-control input-default" placeholder="Title">
+                                <input type="text" name="title" id="title" class="form-control input-default" placeholder="Title">
                             </div>
                             <div class="form-group">
-                                <textarea name="textarea" id="textarea" rows="7" class="form-control bg-transparent" placeholder="Use this space to show clients you have the skills and experience they're looking for.
+                                <textarea maxlength="900" name="aboutYourSelf" id="aboutYourSelf" rows="7" class="form-control bg-transparent" placeholder="Use this space to show clients you have the skills and experience they're looking for.
 
 Describe your strengths and skills
 Highlight projects, accomplishments and education
@@ -32,21 +66,29 @@ Keep it short and make sure it's error-free"></textarea>
 
                             <div class="form-group users-list">
                                 <label for="userPhoto">Cover Photo(Recommend 1600 X 450)</label>
-                                <input type="file" name="userPhoto" class="form-control-file" id="userPhoto" accept="image/*" onchange="preview_image(event)">
+                                <input type="file" name="coverImage" class="form-control-file" id="userPhoto" accept="image/*" onchange="preview_image(event)">
                                 <img class="img-thumbnail" id="output_image" style="height: auto; max-width: 300px;" />
                             </div>
                             <div class="form-group users-list">
                                 <label for="userPhoto">Profile Photo(Recommend 196 X 196)</label>
-                                <input type="file" name="profile_pic" class="form-control-file" id="profile_pic" accept="image/*" onchange="cover_image(event)">
+                                <input type="file" name="profileImage" class="form-control-file" id="profile_pic" accept="image/*" onchange="cover_image(event)">
                                 <img class="rounded-circle" id="img" width="150px" />
                             </div>
+                            <div class="form-group mb-0">
+                                <p>
+                                    <input type="radio" id="male" value="male" name="gender" checked>
+                                    <label for="male">Male</label>
+                                </p>
+                                <p>
+                                    <input type="radio" id="female" value="female" name="gender">
+                                    <label for="female">Female</label>
+                                </p>
 
-
-
-
-
-
-
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="Date">Date Of Birth</label>
+                                <input type="date" name="date" id="Date" class="form-control">
+                            </div>
 
                         </div>
                         <div class="modal-footer">
