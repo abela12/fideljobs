@@ -77,9 +77,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-4">
-                        <div class="card">
-
-                        </div>
+                        <?php include 'include/profile-modal.php' ?>
                     </div>
                     <div class="col-xl-8">
                         <div class="card">

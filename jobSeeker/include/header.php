@@ -13,3 +13,11 @@
 <!-- Main Template Style -->
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+<?php include '../database/database.php' ?>
+<?php include '../include/session.php' ?>
+<style>
+    .profile ul li {
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+</style>
