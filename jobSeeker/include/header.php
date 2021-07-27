@@ -15,6 +15,7 @@
 <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 <?php include '../database/database.php' ?>
 <?php include '../include/session.php' ?>
+<?php include 'include/function.php' ?>
 <style>
     .profile ul li {
         text-transform: uppercase;
