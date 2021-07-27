@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <?php include 'include/profile-modal.php' ?>
+
                     <div class="col-xl-4">
                         <div class="card">
 
@@ -84,10 +84,10 @@
                     </div>
                     <div class="col-xl-8">
                         <div class="card">
-                            <div class="card-title m-auto p-auto">Update Profile</div>
+                            <div class="card-title m-auto p-auto">My Portfolio </div>
                         </div>
                     </div>
-                </div>
+                </div> <?php include 'include/profile-modal.php' ?>
             </div>
         </div>
         <!--**********************************
