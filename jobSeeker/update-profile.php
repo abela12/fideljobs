@@ -78,6 +78,11 @@
                 </div>
                 <div class="row">
                     <?php include 'include/profile-modal.php' ?>
+                    <div class="col-xl-4">
+                        <div class="card">
+
+                        </div>
+                    </div>
                     <div class="col-xl-8">
                         <div class="card">
                             <div class="card-title m-auto p-auto">Update Profile</div>
@@ -120,16 +125,6 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'include/script.php' ?>
-    <script type='text/javascript'>
-        function preview_image(event) {
-            var reader = new FileReader();
-            reader.onload = function() {
-                var output = document.getElementById('output_image');
-                output.src = reader.result;
-            }
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    </script>
 
 
 

@@ -77,6 +77,11 @@
                 </div>
                 <div class="row">
                     <?php include 'include/profile-modal.php' ?>
+                    <div class="col-xl-4">
+                        <div class="card">
+
+                        </div>
+                    </div>
                     <div class="col-xl-8">
                         <div class="card">
                             <h1>My CV</h1>
