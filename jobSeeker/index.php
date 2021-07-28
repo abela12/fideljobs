@@ -4,38 +4,37 @@
 <head>
     <?php include 'include/header.php'
     ?>
-    <?php include '../database/database.php' ?>
-    <?php include '../include/session.php' ?>
+
     <?php
     //login confirmation
     // confirm_logged_in();
 
     ?>
     <style>
-        .items-link a {
-            color: #8b92dd;
-            display: block;
-            border: 1px solid #8b92dd;
-            border-radius: 30px;
-            padding: 4px 33px;
-            text-align: center;
-            margin-bottom: 25px;
-        }
+    .items-link a {
+        color: #8b92dd;
+        display: block;
+        border: 1px solid #8b92dd;
+        border-radius: 30px;
+        padding: 4px 33px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
 
-        .items-link a:hover {
-            color: #fff;
-            background: #8b92dd;
-            border: 1px solid transparent;
-        }
+    .items-link a:hover {
+        color: #fff;
+        background: #8b92dd;
+        border: 1px solid transparent;
+    }
 
-        .items-link span {
-            color: #454d72;
-        }
+    .items-link span {
+        color: #454d72;
+    }
 
-        .items-link2 {
-            padding-top: 35px;
-            text-align: center
-        }
+    .items-link2 {
+        padding-top: 35px;
+        text-align: center
+    }
     </style>
 </head>
 
