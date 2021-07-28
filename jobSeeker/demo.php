@@ -76,31 +76,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <?php include 'include/profile-modal.php' ?>
-                    <div class="col-xl-8">
-                        <div class="card">
-                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-                                <div class="form-group">
-                                    <input type="text" name="" id="" class="form-control input-default" placeholder="Title">
-                                </div>
-                                <div class="post-input">
-                                    <textarea name="textarea" id="textarea" cols="30" rows="10" class="form-control bg-transparent" placeholder="Please type what you want...."></textarea>
+                    <?php
+                    if (isset($_POST['demo'])) {
+                        echo $_POST['text'];
+                    }
 
-                                </div>
+                    ?>
+                    <form action="demo.php" method="post">
+                        <textarea name="text" id="" cols="30" rows="10">
 
-                                <div class="form-group users-list">
-                                    <label for="userPhoto">Cover Photo(Recommend 1600 X 450)</label>
-                                    <input type="file" name="userPhoto" class="form-control-file" id="userPhoto" accept="image/*" onchange="preview_image(event)">
-                                    <img class="img-thumbnail" id="output_image" style="height: auto; max-width: 300px;" />
-                                </div>
-                                <div class="form-group users-list">
-                                    <label for="userPhoto">Profile Photo(Recommend 196 X 196)</label>
-                                    <input type="file" name="profile_pic" class="form-control-file" id="profile_pic" accept="image/*" onchange="cover_image(event)">
-                                    <img class="rounded-circle" id="img" width="150px" />
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                        </textarea>
+                        <button type="submit" name="demo">enter</button>
+                    </form>
                 </div>
             </div>
         </div>
