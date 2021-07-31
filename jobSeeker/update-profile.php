@@ -85,7 +85,10 @@
                     </div>
                     <div class="col-xl-8">
                         <div class="card">
-                            <div class="card-title m-auto p-auto">Update Profile</div>
+                            <div class="card-title m-auto p-auto">
+                                Update Profile
+
+                            </div>
                         </div>
                     </div>
                 </div>
