@@ -34,6 +34,18 @@ function preview_image(event) {
     reader.readAsDataURL(event.target.files[0]);
 }
 </script>
+<script src="assets/vendor/tagcomplete/tagcomplete.js"></script>
+
+<!-- Javascript Maxlength Validation For Bio Description -->
+<script type="text/javascript">
+function limitText(limitField, limitCount, limitNum) {
+    if (limitField.value.length > limitNum) {
+        limitField.value = limitField.value.substring(0, limitNum);
+    } else {
+        limitCount.value = limitNum - limitField.value.length;
+    }
+}
+</script>
 <script type='text/javascript'>
 function cover_image(event) {
 
