@@ -76,17 +76,25 @@
                     </div>
                 </div>
                 <div class="row">
-                    <?php
-                    if (isset($_POST['demo'])) {
-                        echo $_POST['text'];
-                    }
 
-                    ?>
-                    <form action="demo.php" method="post">
-                        <textarea name="text" id="" cols="30" rows="10">
 
-                        </textarea>
-                        <button type="submit" name="demo">enter</button>
+                    <form id="form" action="data.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input type="text" name="fname" id="fname" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input type="text" name="lname" id="lname" class="form-control">
+                        </div>
+                        <div class="form-group users-list">
+                            <label for="userPhoto">Cover Photo(Recommend 1600 X 450)</label>
+                            <input type="file" name="coverImage" id="coverImage" class="form-control-file"
+                                id="userPhoto" accept="image/*" onchange="preview_image(event)">
+                            <img class="img-thumbnail" id="output_image" style="height: auto; max-width: 300px;" />
+                        </div>
+                        <div id="err"></div>
+                        <button type="submit" id="submit" name="submit">send</button>
                     </form>
                 </div>
             </div>
