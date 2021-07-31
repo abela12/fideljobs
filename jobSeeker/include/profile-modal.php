@@ -24,7 +24,10 @@
 
 Describe your strengths and skills
 Highlight projects, accomplishments and education
-Keep it short and make sure it's error-free"></textarea>
+Keep it short and make sure it's error-free" onkeydown="limitText(this.form.aboutYourSelf,this.form.countdown,500);"
+                                    onkeyup='limitText(this.form.message,this.form.countdown,500);'></textarea>
+                                You have
+                                <input readonly type="text" name="countdown" size="3" value="500"> chars left
 
                             </div>
 
