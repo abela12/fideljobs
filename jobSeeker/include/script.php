@@ -46,6 +46,7 @@ function limitText(limitField, limitCount, limitNum) {
     }
 }
 </script>
+<!-- Image Live Preview -->
 <script type='text/javascript'>
 function cover_image(event) {
 
@@ -59,6 +60,7 @@ function cover_image(event) {
 </script>
 <script>
 $(document).ready(function(e) {
+    //insert ajax request data
     $("#form").on('submit', (function(e) {
         e.preventDefault();
         console.log("hello");
@@ -96,6 +98,7 @@ $(document).ready(function(e) {
             }
         });
     }));
+    //Update ajax request data
     $("#updateForm").on('submit', (function(e) {
         e.preventDefault();
         console.log("hello");
@@ -134,68 +137,4 @@ $(document).ready(function(e) {
         });
     }));
 });
-// $(document).ajaxStop(function() {
-//     window.location.reload();
-// });
 </script>
-<!-- <script type="text/javascript">
-$(document).ready(function() {
-
-
-    $('#btnadd').click(function(e) {
-        e.preventDefault();
-        console.log("button clicked");
-        // let fname = $("#fname").val();
-        // let lname = $("#lname").val();
-        // let image = "hello";
-
-        // mydata = {
-        //     fName: fname,
-        //     lName: lname,
-        //     Image: image
-        // };
-        // console.log(mydata);
-        $.ajax({
-            url: "data.php",
-            method: "POST",
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData: false,
-            success: function(data) {
-                console.log(data);
-            }
-        });
-
-    });
-
-    //insert ajax request data
-    $("#submit").click(function(e) {
-        if ($("#formData")[0].checkValidity()) {
-            e.preventDefault();
-
-            $.ajax({
-                url: "action.php",
-                type: "POST",
-                data: $("#formData").serialize() + "&action=insert",
-                success: function(response) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'profile added successfully',
-                    });
-                    $("#add").modal('hide');
-                    $("#formData")[0].reset();
-
-                }
-            });
-        }
-    });
-
-
-
-
-
-
-
-});
-</script> -->
