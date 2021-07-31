@@ -9,6 +9,7 @@
 <link href="assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+<link href="assets/vendor/tagcomplete/tagcomplete.css" rel="stylesheet">
 <!-- Datatable -->
 <link href="assets/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 <!-- Main Template Style -->
