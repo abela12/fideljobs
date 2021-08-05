@@ -1,7 +1,24 @@
+<?php
+if (isset($_POST['register'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password1'];
+    if (empty($name) && empty($email) && ($password)) {
+    } else {
+
+        $register = mysqli_query($conn, "INSERT INTO `users`(`username`, `email`, `password`,`role`) 
+        VALUES 
+        ('$username','$email','$password','2')");
+    }
+}
+
+?>
+
+
 <div class="section section-padding">
     <div class="container">
 
-        <!-- Register & Login Wrapper Start -->
+        <!-- Register & Login JobSeeker Start -->
         <div class="register-login-wrapper">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -27,35 +44,38 @@
                         <h3 class="title">Registration <span>Now</span></h3>
 
                         <div class="form-wrapper">
-                            <form action="#">
-                                <!-- Single Form Start -->
+                            <form action="register_jobseeker.php" method="post">
+
                                 <div class="single-form">
-                                    <input type="text" placeholder="Name">
+                                    <input type="text" name="username" id="username" placeholder="username">
                                 </div>
-                                <!-- Single Form End -->
-                                <!-- Single Form Start -->
+
+
                                 <div class="single-form">
-                                    <input type="email" placeholder="Email">
+                                    <input type="email" name="email" id="email" placeholder="Email">
                                 </div>
-                                <!-- Single Form End -->
-                                <!-- Single Form Start -->
+
+
                                 <div class="single-form">
-                                    <input type="password" placeholder="Password">
+                                    <input type="password" name="password1" id="password1" placeholder="Password">
                                 </div>
-                                <!-- Single Form End -->
-                                <!-- Single Form Start -->
+
+
                                 <div class="single-form">
-                                    <input type="password" placeholder="Confirm Password">
+                                    <input type="password" name="password2" id="password2"
+                                        placeholder="Confirm Password">
                                 </div>
-                                <!-- Single Form End -->
-                                <!-- Single Form Start -->
+
+
                                 <div class="single-form">
-                                    <button class="btn btn-primary btn-hover-dark w-100">Create an
+                                    <button type="submit" name="register"
+                                        class="btn btn-primary btn-hover-dark w-100">Create an
                                         account</button>
 
-                                    <a class="btn btn-secondary btn-outline w-100" href="login.php">Login</a>
+                                    <button type="submit" class="btn btn-secondary btn-outline w-100"
+                                        href="login.php">Login</button>
                                 </div>
-                                <!-- Single Form End -->
+
                             </form>
                         </div>
                     </div>
