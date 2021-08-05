@@ -75,10 +75,14 @@
                         <?php include 'include/profile-banner.php' ?>
                     </div>
                 </div>
-                <div class="row">
+                <div class="form-row">
 
 
                     <form id="form" action="data.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group col-xl-12">
+                            <label class="text-black font-w500 mb-3">Tags</label><span class="text-danger ml-1">*</span>
+                            <input type="text" class="form-control tags_input" value="html,css,bootstrap,photoshop" />
+                        </div>
                         <div class="form-group">
                             <label for="">First Name</label>
                             <input type="text" name="fname" id="fname" class="form-control">
