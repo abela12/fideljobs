@@ -1,5 +1,6 @@
 <div class="deznav">
     <div class="deznav-scroll">
+
         <ul class="metismenu" id="menu">
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
@@ -23,6 +24,7 @@
 
                 </ul>
             </li>
+
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-controls-3"></i>
                     <span class="nav-text">Jobs</span>
@@ -35,6 +37,7 @@
 
                 </ul>
             </li>
+
             <li><a href="../logout.php" class="has-arrow ai-icon"> <i class="lni lni-power-switch"></i>
                     Logout</a></li>
 
