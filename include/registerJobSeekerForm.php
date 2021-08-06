@@ -72,8 +72,7 @@ if (isset($_POST['register'])) {
                                         class="btn btn-primary btn-hover-dark w-100">Create an
                                         account</button>
 
-                                    <button type="submit" class="btn btn-secondary btn-outline w-100"
-                                        href="login.php">Login</button>
+                                    <a class="btn btn-secondary btn-outline w-100" href="login.php">Login</a>
                                 </div>
 
                             </form>
