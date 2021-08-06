@@ -83,7 +83,7 @@
                             <div class="card-body">
                                 <div class="profile-blog mb-5">
                                     <h5 class="text-primary d-inline">About Me</h5>
-                                    <img src="images/profile/1.jpg" alt="" class="img-fluid mt-4 mb-4 w-100">
+                                    <img src="assets/images/avatar/1.jpg" alt="" class="img-fluid mt-4 mb-4 w-100">
                                     <h4>Fullstack Developer</h4>
                                     <p class="mb-0">My name is alpha coder. I'm 22 years old freelance website
                                         designer, Originally born in Addis Ababa, Ethiopia, finished high school in my
@@ -217,52 +217,7 @@
                                                 </div>
                                             </div>
                                             <div id="profile-settings" class="tab-pane fade">
-                                                <div class="pt-3">
-                                                    <div class="settings-form">
-                                                        <h4 class="text-primary">Account Setting</h4>
-                                                        <form>
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-6">
-                                                                    <label>Email</label>
-                                                                    <input type="email" placeholder="Email"
-                                                                        class="form-control">
-                                                                </div>
-                                                                <div class="form-group col-md-6">
-                                                                    <label>Password</label>
-                                                                    <input type="password" placeholder="Password"
-                                                                        class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Address</label>
-                                                                <input type="text" placeholder="Addis abeba"
-                                                                    class="form-control">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Phone Number</label>
-                                                                <input type="number" class="form-control">
-                                                            </div>
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-6">
-                                                                    <label>City</label>
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-
-
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="gridCheck">
-                                                                    <label class="custom-control-label" for="gridCheck">
-                                                                        Check me out</label>
-                                                                </div>
-                                                            </div>
-                                                            <button class="btn btn-primary" type="submit">Sign
-                                                                in</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
+                                                <?php include 'include/profile-settings.php' ?>
                                             </div>
                                         </div>
                                     </div>
