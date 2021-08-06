@@ -137,4 +137,45 @@ $(document).ready(function(e) {
         });
     }));
 });
+
+$(document).ready(function() {
+
+    var i = 1;
+
+
+
+
+
+    $("#add").click(function() {
+        i++;
+        if (i < 6) {
+            console.log(i);
+            $('#dynamic_field').append('<tr id="row' + i +
+                '"><td><input type="text" name="name[]" placeholder="Enter your username" class="form-control name_list" required/></td><td><select name="email[]" id="" class="form-control"><option value="facebook">Facebook</option><option value="instagram">Instagram</option></select></td><td><button type="button" name="remove" id="' +
+                i + '" class="btn btn-danger btn_remove">X</button></td></tr>');
+        }
+    });
+
+    $(document).on('click', '.btn_remove', function() {
+        var button_id = $(this).attr("id");
+        i = i - 1;
+        $('#row' + button_id + '').remove();
+        console.log(i);
+
+    });
+
+    $("#submit").on('click', function() {
+        var formdata = $("#add_name").serialize();
+        $.ajax({
+            url: "action.php",
+            type: "POST",
+            data: formdata,
+            cache: false,
+            success: function(result) {
+                alert(result);
+                $("#add_name")[0].reset();
+            }
+        });
+    });
+});
 </script>
