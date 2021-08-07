@@ -102,6 +102,8 @@
                                     <a href="update-profile.php" class="btn btn-outline-dark d-block btn-lg">Edit
                                         Profile</a>
                                 </div>
+                                <button type="button" class="btn btn-primary mb-2" data-toggle="modal"
+                                    data-target=".bd-example-modal-lg">Add Language</button>
                             </div>
 
                         </div>
@@ -226,6 +228,7 @@
                         </div>
                     </div>
                 </div>
+                <?php include 'modal/language-modal.php' ?>
                 <?php include 'include/profile-modal.php' ?>
             </div>
         </div>
