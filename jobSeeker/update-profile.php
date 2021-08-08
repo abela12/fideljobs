@@ -89,21 +89,14 @@
                                         designer, Originally born in Addis Ababa, Ethiopia, finished high school in my
                                         townhome, and now I'm learning Computer Science at St'marry University</p>
                                 </div>
-                                <div class="text-center mb-5">
-                                    <a href="javascript:;" class="btn text-left light btn-dark d-block mb-3 "><i
-                                            class="fa fa-linkedin scale5 mr-3"></i>/2</a>
-                                    <a href="javascript:;" class="btn text-left light btn-dark d-block mb-3 "><i
-                                            class="fa fa-twitter scale5 mr-3"></i>/avel.coder</a>
-                                    <a href="javascript:;" class="btn text-left light btn-dark d-block mb-4 "><i
-                                            class="fa fa-facebook scale5 mr-3"></i>/avel.coder</a>
-                                    <a href="javascript:;" class="btn text-left light btn-dark d-block mb-4 "><i
-                                            class="fa fa-youtube scale5 mr-3"></i>/avel.coder</a>
 
-                                    <a href="update-profile.php" class="btn btn-outline-dark d-block btn-lg">Edit
-                                        Profile</a>
-                                </div>
                                 <button type="button" class="btn btn-primary mb-2" data-toggle="modal"
                                     data-target=".bd-example-modal-lg">Add Language</button>
+                                <button type="button" class="btn btn-success mb-2 btn-sm" data-toggle="modal"
+                                    data-target=".add-social-media">Add Social Media</button>
+
+
+
                             </div>
 
                         </div>
@@ -230,6 +223,7 @@
                 </div>
                 <?php include 'modal/language-modal.php' ?>
                 <?php include 'include/profile-modal.php' ?>
+                <?php include 'modal/socail-media-modal.php' ?>
             </div>
         </div>
         <!--**********************************
