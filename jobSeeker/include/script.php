@@ -138,20 +138,18 @@ $(document).ready(function(e) {
     }));
 });
 
+
+
+// Insert Dynamic Language👼
 $(document).ready(function() {
 
     var i = 1;
-
-
-
-
-
     $("#add").click(function() {
         i++;
-        if (i < 6) {
+        if (i < 4) {
             console.log(i);
             $('#dynamic_field').append('<tr id="row' + i +
-                '"><td><input type="text" name="name[]" placeholder="Enter your username" class="form-control name_list" required/></td><td><select name="email[]" id="" class="form-control"><option value="facebook">Facebook</option><option value="instagram">Instagram</option></select></td><td><button type="button" name="remove" id="' +
+                '"><td><input type="text" name="languageName[]" placeholder="Enter your username" class="form-control name_list" required/></td><td>  <div class="form-groupp"><select name="languageStatus[]" id="" class="form-control"><option value="Expert">Expert</option><option value="Fluent">Fluent</option><option value="Intermediate">Intermediate</option><option value="Beginner">Beginner</option></select></div></td><td><button type="button" name="remove" id="' +
                 i + '" class="btn btn-danger btn_remove">X</button></td></tr>');
         }
     });
@@ -167,13 +165,36 @@ $(document).ready(function() {
     $("#submit").on('click', function() {
         var formdata = $("#add_name").serialize();
         $.ajax({
-            url: "action.php",
+            url: "include/addLanguage.php",
             type: "POST",
             data: formdata,
+            contentType: false,
             cache: false,
+            processData: false,
+            beforeSend: function() {
+                //$("#preview").fadeOut();
+                $("#err").fadeOut();
+            },
             success: function(result) {
-                alert(result);
-                $("#add_name")[0].reset();
+                if (result == 'invalid') {
+                    // invalid file format.
+                    $("#err").html("Invalid File !").fadeIn();
+                } else {
+                    swal("Good job!", "You Language Successfully Inserted!", "success")
+                        .then(
+                            function() {
+                                location.reload();
+                            });
+                    $(".bd-example-modal-l").modal('hide');
+
+                    // view uploaded file.
+
+                    $("#addform")[0].reset();
+
+                }
+            },
+            error: function(e) {
+                $("#err").html(e).fadeIn();
             }
         });
     });
