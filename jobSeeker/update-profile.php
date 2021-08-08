@@ -90,7 +90,7 @@
                                         townhome, and now I'm learning Computer Science at St'marry University</p>
                                 </div>
 
-                                <button type="button" class="btn btn-primary mb-2" data-toggle="modal"
+                                <button type="button" class="btn btn-primary btn-sm mb-2" data-toggle="modal"
                                     data-target=".bd-example-modal-lg">Add Language</button>
                                 <button type="button" class="btn btn-success mb-2 btn-sm" data-toggle="modal"
                                     data-target=".add-social-media">Add Social Media</button>
@@ -219,11 +219,13 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <?php include 'modal/language-modal.php' ?>
                 <?php include 'include/profile-modal.php' ?>
-                <?php include 'modal/socail-media-modal.php' ?>
+                <?php include 'modal/social-media-modal.php'
+                ?>
             </div>
         </div>
         <!--**********************************
