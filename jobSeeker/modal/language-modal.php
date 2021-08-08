@@ -14,11 +14,11 @@
                     <div class="table-responsive">
                         <table class="table table-responsive-md" id="dynamic_field">
                             <tr>
-                                <td><input type="text" class="form-control" name="name[]" placeholder="language Name"
-                                        class="form-control name_list" /></td>
+                                <td><input type="text" class="form-control" name="languageName[]"
+                                        placeholder="language Name" class="form-control name_list" required /></td>
                                 <td>
                                     <div class="form-group">
-                                        <select name="email[]" id="" class="form-control">
+                                        <select name="languageStatus[]" id="" class="form-control">
                                             <option value="Expert">Expert</option>
                                             <option value="Fluent">Fluent</option>
                                             <option value="Intermediate">Intermediate</option>
@@ -32,12 +32,12 @@
                             </tr>
                         </table>
                     </div>
-                    <input type="submit" class="btn btn-success" name="submit" id="submit" value="Submit">
+
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" name="submit" id="submit" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
