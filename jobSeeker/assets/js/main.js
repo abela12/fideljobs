@@ -64,12 +64,12 @@ $("#addSocialMediaBtn").click(function () {
         i +
         '"> <div class="form-group"><td><input type="text" class="form-control" name="socialMediaUrl[]"placeholder="url" class="form-control name_list" required /></td></div><div class="form-group"><td><select name="socialMedia[]" id="" class="form-control"><option value="FaceBook">FaceBook</option><option value="InstaGram">InstaGram</option><option value="YouTube">YouTube</option></select></td></div><td><button type="button" name="remove" id="' +
         i +
-        '"class="btn btn-danger btn-sm btn_remove">X</button></td></tr>'
+        '"class="btn btn-danger btn-sm btn_remove_social">X</button></td></tr>'
     );
   }
 });
 
-$(document).on("click", ".btn_remove", function () {
+$(document).on("click", ".btn_remove_social", function () {
   var button_id = $(this).attr("id");
   i = i - 1;
   $("#row" + button_id + "").remove();
@@ -100,6 +100,59 @@ $("#addSocialBtn").on("click", function () {
         $(".add-social-media").modal("hide");
         // alert(result);
         $("#add-social")[0].reset();
+      }
+    },
+  });
+});
+
+// 🚀 Insert Dynamic Certificate  🍦
+var l = 1;
+
+$("#addCertificateBtn").click(function () {
+  l++;
+  if (l < 6) {
+    console.log(l);
+    $("#addCertificateTable").append(
+      '<tr id="row' +
+        i +
+        '">  <div class="form-group"><td><input type="text" class="form-control" name="certificateName[]" placeholder="certificate Name" class="form-control name_list" required /></td></div> <div class="form-group"><td><input type="text" class="form-control" name="certificateLink[]" placeholder="certificate link" class="form-control name_list" required /></td></div><td><button type="button" name="remove" id="' +
+        i +
+        '"class="btn btn-danger btn-sm btn_remove_certificate">X</button></td></tr>'
+    );
+  }
+});
+
+$(document).on("click", ".btn_remove_certificate", function () {
+  var button_id = $(this).attr("id");
+  i = i - 1;
+  $("#row" + button_id + "").remove();
+  console.log(i);
+});
+
+$("#addCertificate").on("click", function () {
+  var formdata = $("#add-certificate").serialize();
+  console.log(formdata);
+  $.ajax({
+    url: "action/addCertificate.php",
+    type: "POST",
+    data: formdata,
+    processData: false,
+    cache: false,
+    success: function (result) {
+      if (result == "invalid") {
+        // invalid file format.
+        $("#err").html("Invalid File !").fadeIn();
+      } else {
+        swal(
+          "Good job!",
+          "You Social Media Successfully Inserted!",
+          "success"
+        ).then(function () {
+          //  location.reload();
+        });
+        $(".add-certificate").modal("hide");
+        // alert(result);
+        $("#add-certificate")[0].reset();
       }
     },
   });
