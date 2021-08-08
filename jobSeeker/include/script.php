@@ -24,6 +24,8 @@
 <!-- Datatable -->
 <script src="assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
 <script src="assets/js/plugins-init/datatables.init.js"></script>
+<!-- Main JavaScript -->
+<script src="assets/js/main.js"></script>
 <script type='text/javascript'>
 function preview_image(event) {
     var reader = new FileReader();
@@ -131,56 +133,5 @@ $(document).ready(function(e) {
             }
         });
     }));
-});
-// Insert Dynamic Language👼
-
-var i = 1;
-
-$("#addLanguage").click(function() {
-    i++;
-    if (i < 6) {
-        console.log(i);
-        $('#dynamic_field').append('<tr id="row' + i +
-            '"><td><input type="text" name="languageName[]" placeholder="enter language" class="form-control name_list" required/></td><td>  <div class="form-groupp"><select name="languageStatus[]" id="" class="form-control"><option value="Expert">Expert</option><option value="Fluent">Fluent</option><option value="Intermediate">Intermediate</option><option value="Beginner">Beginner</option></select></div></td><td><button type="button" name="remove" id="' +
-            i + '" class="btn btn-danger btn-sm btn_remove">X</button></td></tr>');
-    }
-});
-
-
-$(document).on('click', '.btn_remove', function() {
-    var button_id = $(this).attr("id");
-    i = i - 1;
-    $('#row' + button_id + '').remove();
-    console.log(i);
-
-});
-
-$("#submit").on('click', function() {
-    var formdata = $("#add-language").serialize();
-    console.log(formdata);
-    $.ajax({
-        url: "action/addLanguage.php",
-        type: "POST",
-        data: formdata,
-        processData: false,
-        cache: false,
-        success: function(result) {
-            if (result == 'invalid') {
-                // invalid file format.
-                $("#err").html("Invalid File !").fadeIn();
-            } else {
-
-
-                swal("Good job!", "You Language Successfully Inserted!", "success")
-                    .then(
-                        function() {
-                            //  location.reload();
-                        });
-                $(".bd-example-modal-lg").modal('hide');
-                // alert(result);
-                $("#add-language")[0].reset();
-            }
-        }
-    });
 });
 </script>
