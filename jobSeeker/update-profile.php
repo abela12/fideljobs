@@ -96,6 +96,11 @@
                                     data-target=".add-social-media">Add Social Media</button>
                                 <button type="button" class="btn btn-warning mb-2 btn-sm" data-toggle="modal"
                                     data-target=".add-certificate">Add Certificate</button>
+                                <button type="button" class="btn btn-warning mb-2 btn-sm" data-toggle="modal"
+                                    data-target=".experience-modal">Add Education</button>
+                                <button type="button" class="btn btn-danger mb-2 btn-sm
+                                    " data-toggle="modal" data-target=".highest-education-modal">Add Highest
+                                    Education</button>
 
 
 
@@ -231,6 +236,9 @@
                 ?>
                 <?php include 'modal/certificate-modal.php'
                 ?>
+                <?php include 'modal/education-modal.php' ?>
+                <?php include 'modal/experiences-modal.php' ?>
+                <?php include 'modal/highest-education-modal.php' ?>
             </div>
         </div>
         <!--**********************************
