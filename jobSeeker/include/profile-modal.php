@@ -2,7 +2,7 @@
     <div class="card">
 
         <!-- Modal For Job Seeker Bio -->
-        <div id="add" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="add" class="modal fade edit-bio-modal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
