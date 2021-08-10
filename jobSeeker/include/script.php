@@ -86,7 +86,7 @@ $(document).ready(function(e) {
                             function() {
                                 location.reload();
                             });
-                    $("#add").modal('hide');
+                    $("#edit-bio-modal").modal('hide');
                     // view uploaded file.
                     $("#preview").html(data).fadeIn();
                     $("#form")[0].reset();
