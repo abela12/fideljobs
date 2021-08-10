@@ -92,7 +92,7 @@ if ($num_row > 0) {
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li class="dropdown-item"><i class="fa fa-user-circle text-primary mr-2"></i> View profile</li>
 
-                        <li class="dropdown-item" data-toggle="modal" data-target=".bd-example-modal-lg"><i
+                        <li class="dropdown-item" data-toggle="modal" data-target=".edit-bio-modal"><i
                                 class="fa fa-camera text-primary mr-2"></i> Edit Bio
                         </li>
 
