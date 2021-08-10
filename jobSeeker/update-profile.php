@@ -89,9 +89,13 @@
                                         designer, Originally born in Addis Ababa, Ethiopia, finished high school in my
                                         townhome, and now I'm learning Computer Science at St'marry University</p>
                                 </div>
+                                <div>
+                                    <span>add language</span>
+                                    <button type="button" class="btn btn-primary btn-sm mb-2" data-toggle="modal"
+                                        data-target=".bd-example-modal-lg"><i class="fa fa-plus-circle"></i></button>
+                                </div>
 
-                                <button type="button" class="btn btn-primary btn-sm mb-2" data-toggle="modal"
-                                    data-target=".bd-example-modal-lg">Add Language</button>
+
                                 <button type="button" class="btn btn-success mb-2 btn-sm" data-toggle="modal"
                                     data-target=".add-social-media">Add Social Media</button>
                                 <button type="button" class="btn btn-warning mb-2 btn-sm" data-toggle="modal"
@@ -101,6 +105,9 @@
                                 <button type="button" class="btn btn-danger mb-2 btn-sm
                                     " data-toggle="modal" data-target=".highest-education-modal">Add Highest
                                     Education</button>
+                                <button type="button" class="btn btn-primary btn-sm mb-2" data-toggle="modal"
+                                    data-target=".work-experience-modal">Add Work Experience</button>
+
 
 
 
@@ -239,6 +246,7 @@
                 <?php include 'modal/education-modal.php' ?>
                 <?php include 'modal/experiences-modal.php' ?>
                 <?php include 'modal/highest-education-modal.php' ?>
+                <?php include 'modal/work-experience-modal.php' ?>
             </div>
         </div>
         <!--**********************************
