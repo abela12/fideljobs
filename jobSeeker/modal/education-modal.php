@@ -1,5 +1,5 @@
 <!--Add Education  Modal -->
-<div class="modal fade education-modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade add-education-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,40 +7,45 @@
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <form action="update-profile.php" method="post">
+                <div class="modal-body">
 
-                <form action="" method="post">
+
                     <div class="form-row">
                         <div class="form-group col-md-8">
-                            <label for="schoolName">School Name</label>
-                            <input type="text" name="schoolName" placeholder="St mary university" id="schoolName"
+                            <label for="shoolName">Shool Name</label>
+                            <input type="text" name="shoolName" id="shoolName" placeholder="Radical"
                                 class="form-control">
                         </div>
 
-                    </div>
-                    <div class="form-row">
                         <div class="form-group col-md-8">
-                            <label for="areaOfStudy">Area of Study (Optional)</label>
-                            <input type="text" name="areaOfStudy" id="areaOfStudy" placeholder="Computer Science"
-                                class="form-control">
+                            <label for="type">School Name</label>
+                            <select name="type" id="type" class="form-control">
+                                <option value="high school">high school</option>
+                                <option value="Preparatory school">Preparatory school</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group col-md-8">
+                            <label for="schoolDescription">Description</label>
+                            <textarea class="form-control" name="schoolDescription" id="schoolDescription" cols="30"
+                                rows="5"></textarea>
                         </div>
 
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-8">
-                            <label for="description">Description (Optional)</label>
-                            <textarea name="description" id="description" class="form-control" cols="10"
-                                rows="4"></textarea>
-                        </div>
-                    </div>
 
-                </form>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-sm light" data-dismiss="modal">Close</button>
-                <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Save changes</button>
-            </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-sm light" data-dismiss="modal">Close</button>
+                    <button type="submit" name="addEducation" id="addEducation" class="btn btn-primary btn-sm">Save
+                        changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
