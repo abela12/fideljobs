@@ -7,39 +7,59 @@
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form action="" method="post">
+            <form action="update-profile.php" method="post">
+                <div class="modal-body">
+
                     <div class="form-row">
-                        <div class="form-group col-md-8">
-                            <label for="subject">Subject</label>
-                            <input type="text" name="subject" placeholder="St mary university" id="subject"
+                        <div class="form-group col-md-6">
+                            <label for="workTitle">Work Title</label>
+                            <input type="text" name="workTitle" id="workTitle" placeholder="Web Developer"
+                                class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="workCountry">Work Country</label>
+                            <input type="text" name="workCountry" id="workCountry" placeholder="Ethiopia"
                                 class="form-control">
                         </div>
 
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-8">
-                            <label for="experienceType">Experience Type</label>
-                            <input type="text" name="experienceType" id="experienceType" placeholder=""
-                                class="form-control">
+                        <div class="form-group col-md-6">
+                            <label for="startYear">Start Year</label>
+                            <input type="text" name="startYear" placeholder="2002" id="startYear" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="endYear">Start Year</label>
+                            <input type="text" name="endYear" placeholder="2010" id="endYear" class="form-control">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" name="currentWork" class="custom-control-input" id="currentWork">
+                                <label class="custom-control-label" for="currentWork">
+                                    Current Work</label>
+                            </div>
                         </div>
 
                     </div>
+
                     <div class="form-row">
                         <div class="form-group col-md-8">
-                            <label for="description">Description (Optional)</label>
-                            <textarea name="description" id="description" class="form-control" cols="10"
+                            <label for="workDescription">Work Description (Optional)</label>
+                            <textarea name="workDescription" id="workDescription" class="form-control" cols="10"
                                 rows="4"></textarea>
                         </div>
                     </div>
 
-                </form>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-sm light" data-dismiss="modal">Close</button>
-                <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Save changes</button>
-            </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-sm light" data-dismiss="modal">Close</button>
+                    <button type="submit" name="workExperience" id="workExperience" class="btn btn-primary btn-sm">Save
+                        changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
