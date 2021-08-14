@@ -157,3 +157,8 @@ $("#addCertificate").on("click", function () {
     },
   });
 });
+
+$("#sendOne").on("click", function () {
+  // var formdata = $("#add-education").serialize();
+  console.log("formdata");
+});
