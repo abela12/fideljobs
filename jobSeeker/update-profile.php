@@ -3,6 +3,11 @@
 
 <head>
     <?php include 'include/header.php' ?>
+    <?php include 'action/addEducation.php' ?>
+
+
+
+
 
 
 </head>
@@ -94,16 +99,23 @@
                                     <button type="button" class="btn btn-primary btn-sm mb-2" data-toggle="modal"
                                         data-target=".bd-example-modal-lg"><i class="fa fa-plus-circle"></i></button>
                                 </div>
+                                <div>
+                                    <span>Add Social Media</span>
+                                    <button type="button" class="btn btn-success mb-2 btn-sm" data-toggle="modal"
+                                        data-target=".add-social-media"><i class="fa fa-plus-circle"></i></button>
+                                </div>
+                                <div>
+                                    <span>Add Certificate</span>
+                                    <button type="button" class="btn btn-warning mb-2 btn-sm" data-toggle="modal"
+                                        data-target=".add-certificate"><i class="fa fa-plus-circle"></i></button>
+                                </div>
 
 
-                                <button type="button" class="btn btn-success mb-2 btn-sm" data-toggle="modal"
-                                    data-target=".add-social-media">Add Social Media</button>
+
                                 <button type="button" class="btn btn-warning mb-2 btn-sm" data-toggle="modal"
-                                    data-target=".add-certificate">Add Certificate</button>
-                                <button type="button" class="btn btn-warning mb-2 btn-sm" data-toggle="modal"
-                                    data-target=".experience-modal">Add Education</button>
-                                <button type="button" class="btn btn-danger mb-2 btn-sm
-                                    " data-toggle="modal" data-target=".highest-education-modal">Add Highest
+                                    data-target=".add-education-modal">Add Education</button>
+                                <button type="button" class="btn btn-danger mb-2 btn-sm" data-toggle="modal"
+                                    data-target=".highest-education-modal">Add Highest
                                     Education</button>
                                 <button type="button" class="btn btn-primary btn-sm mb-2" data-toggle="modal"
                                     data-target=".work-experience-modal">Add Work Experience</button>
