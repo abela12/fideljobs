@@ -59,12 +59,28 @@
             <h4 class="text-primary mb-2">Work Status</h4>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="workAvailability">Work Availability</label>
-                    <input type="text" name="workAvailability" id="workAvailability" class="form-control">
+                    <label for="work_availability"> I am currently</label>
+                    <select name="work_availability" id="work_availability" class="form-control">
+                        <option value="More then 30 hrs/week">More then 30 hrs/week</option>
+                        <option value="Less then 30 hrs/week">Less then 30 hrs/week</option>
+                        <option value="As needed- open to offers">As needed- open to offers</option>
+                    </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="workExperience">Work Experience</label>
-                    <input type="text" name="workExperience" id="workExperience" class="form-control">
+                    <label for="job_type">Job Type</label>
+                    <select name="job_type" id="job_type" class="form-control">
+                        <option value="Full Time">Full Time</option>
+                        <option value="Part Time">Part Time
+                        </option>
+
+                        <option value="Permanent">Permanent</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Contractual">Contractual</option>
+                        <option value="freelancer">Freelancer</option>
+                        <option value="Temporary">Temporary</option>
+                        <option value="Internship">Internship</option>
+
+                    </select>
                 </div>
 
             </div>
