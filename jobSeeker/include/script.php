@@ -3,6 +3,8 @@
 <script src="assets/vendor/chart.js/Chart.bundle.min.js"></script>
 <script src="assets/js/custom.min.js"></script>
 <script src="assets/js/deznav-init.js"></script>
+<script src="assets/vendor/select2/js/select2.full.min.js"></script>
+<script src="assets/js/plugins-init/select2-init.js"></script>
 
 
 <!-- Counter Up -->
@@ -133,5 +135,12 @@ $(document).ready(function(e) {
             }
         });
     }));
+});
+</script>
+<script>
+$("#skill-list").select2({
+
+    maximumSelectionLength: 15
+
 });
 </script>
