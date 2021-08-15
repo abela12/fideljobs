@@ -12,13 +12,13 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="workTitle">Work Title</label>
-                            <input type="text" name="workTitle" id="workTitle" placeholder="Web Developer"
-                                class="form-control">
+                            <label for="workTitle">Title</label>
+                            <input type="text" name="workTitle" id="workTitle"
+                                placeholder="Enter your position or title" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="workCountry">Work Country</label>
-                            <input type="text" name="workCountry" id="workCountry" placeholder="Ethiopia"
+                            <label for="companyName">Company Name</label>
+                            <input type="text" name="companyName" id="companyName" placeholder="Enter company name"
                                 class="form-control">
                         </div>
 
@@ -37,7 +37,7 @@
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" name="currentWork" class="custom-control-input" id="currentWork">
                                 <label class="custom-control-label" for="currentWork">
-                                    Current Work</label>
+                                    I'm currently working here</label>
                             </div>
                         </div>
 
@@ -46,8 +46,8 @@
                     <div class="form-row">
                         <div class="form-group col-md-8">
                             <label for="workDescription">Work Description (Optional)</label>
-                            <textarea name="workDescription" id="workDescription" class="form-control" cols="10"
-                                rows="4"></textarea>
+                            <textarea name="workDescription" placeholder="Describe your work experience"
+                                id="workDescription" class="form-control" cols="10" rows="4"></textarea>
                         </div>
                     </div>
 
