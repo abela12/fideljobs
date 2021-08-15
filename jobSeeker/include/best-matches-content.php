@@ -94,8 +94,9 @@
                                 </div>
                                 <div class="d-flex align-items-center pb-3 mb-3 border-bottom">
                                     <img width="100px" src="assets/images/company/wordpress.png" alt="">
-                                    <span class="text-black fs-16 font-w600">Wordpress web design</span>
+                                    <span class="text-black fs-16 font-w600">Wordpress web </span>
                                 </div>
+
                                 <div class="fs-2">
                                     <ul class="d-flex justify-content-between pb-0">
                                         <li class="font-w500 text-dark">Several web development projects for adult
