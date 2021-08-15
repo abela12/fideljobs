@@ -1,6 +1,8 @@
 <?php
 
 $jobseeker_id = $_SESSION['id'];
+
+// Add Education
 if (isset($_POST['addEducation'])) {
     if (isset($_POST['shoolName']) == '' || isset($_POST['shoolName']) == '') {
     } else {
@@ -11,6 +13,7 @@ if (isset($_POST['addEducation'])) {
         VALUES ('$jobseeker_id','$shoolName','type','description')");
     }
 }
+//Add Highest Education
 if (isset($_POST['addHighestEducation'])) {
     if (isset($_POST['schoolName']) == '' and isset($_POST['fieldOfStudy']) == '') {
     } else {
@@ -23,16 +26,17 @@ if (isset($_POST['addHighestEducation'])) {
         VALUES ('$jobseeker_id','$schoolName','$fieldOfStudy','$CGPA','$description')");
     }
 }
+// Add Work Experience
 if (isset($_POST['workExperience'])) {
-    if ($_POST['workTitle'] == '' or $_POST['workCountry'] == '') {
+    if ($_POST['workTitle'] == '' or $_POST['companyName'] == '') {
     } else {
-        $work_country = $_POST['workCountry'];
+        $companyName = $_POST['companyName'];
         $work_title = $_POST['workTitle'];
         $start_year = $_POST['startYear'];
         $end_year = $_POST['endYear'];
         $current_work = $_POST['currentWork'];
         $work_description = $_POST['workDescription'];
-        $insertWorkExperience = mysqli_query($conn, "INSERT INTO `jobseeker_work_experience`(`jobseeker_id`, `work_country`, `work_title`, `start_year`, `end_year`, `current_work`, `work_description`) 
-        VALUES ('$jobseeker_id','$work_country','$work_title','$start_year','$end_year','$current_work','$work_description')");
+        $insertWorkExperience = mysqli_query($conn, "INSERT INTO `jobseeker_work_experience`(`jobseeker_id`, `company_name`, `work_title`, `start_year`, `end_year`, `current_work`, `work_description`) 
+        VALUES ('$jobseeker_id','$companyName','$work_title','$start_year','$end_year','$current_work','$work_description')");
     }
 }
