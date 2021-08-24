@@ -72,7 +72,8 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <?php include 'include/navbar.php' ?>
+        <?php include 'include/navbar.php'
+        ?>
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
