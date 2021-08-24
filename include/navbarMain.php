@@ -16,7 +16,7 @@
                 <!-- Header Top Medal Start -->
                 <div class="header-top-medal">
                     <div class="top-info">
-                        <p><i class="flaticon-phone-call"></i> <a href="tel:0911309125">(251) 91130912</a></p>
+                        <p><i class="flaticon-phone-call"></i> <a href="tel:0911309125">(251) 911309125</a></p>
                         <p><i class="flaticon-email"></i> <a
                                 href="mailto:fideljobs@support.com">fideljobs@support.com</a></p>
                     </div>
