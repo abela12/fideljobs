@@ -22,9 +22,12 @@
                                     <td>
 
                                         <select name="socialMedia[]" id="" class="form-control">
-                                            <option value="FaceBook">FaceBook</option>
-                                            <option value="InstaGram">InstaGram</option>
-                                            <option value="YouTube">YouTube</option>
+                                            <option value="linkedin">LinkedIn</option>
+                                            <option value="facebook">FaceBook</option>
+                                            <option value="instagram">InstaGram</option>
+                                            <option value="youtube">YouTube</option>
+
+
 
                                         </select>
 
