@@ -62,7 +62,7 @@ $("#addSocialMediaBtn").click(function () {
     $("#social_media").append(
       '<tr id="row' +
         i +
-        '"> <div class="form-group"><td><input type="text" class="form-control" name="socialMediaUrl[]"placeholder="url" class="form-control name_list" required /></td></div><div class="form-group"><td><select name="socialMedia[]" id="" class="form-control"><option value="FaceBook">FaceBook</option><option value="InstaGram">InstaGram</option><option value="YouTube">YouTube</option></select></td></div><td><button type="button" name="remove" id="' +
+        '"> <div class="form-group"><td><input type="text" class="form-control" name="socialMediaUrl[]"placeholder="url" class="form-control name_list" required /></td></div><div class="form-group"><td><select name="socialMedia[]" id="" class="form-control"><option value="linkedin">LinkedIn</option><option value="facebook">FaceBook</option><option value="instagram">InstaGram</option><option value="youtube">YouTube</option></select></td></div><td><button type="button" name="remove" id="' +
         i +
         '"class="btn btn-danger btn-sm btn_remove_social">X</button></td></tr>'
     );
