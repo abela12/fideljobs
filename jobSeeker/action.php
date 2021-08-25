@@ -44,3 +44,4 @@ if (in_array($fileActExt, $allowImg)) {
 } else {
     return false;
 }
+// sleep(5);
