@@ -26,6 +26,11 @@
 <!-- Datatable -->
 <script src="assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
 <script src="assets/js/plugins-init/datatables.init.js"></script>
+
+<!-- Summernote -->
+<script src="assets/vendor/summernote/js/summernote.min.js"></script>
+<!-- Summernote init -->
+<script src="assets/js/plugins-init/summernote-init.js"></script>
 <!-- Main JavaScript -->
 <script src="assets/js/main.js"></script>
 <script type='text/javascript'>
@@ -77,6 +82,7 @@ $(document).ready(function(e) {
             beforeSend: function() {
                 //$("#preview").fadeOut();
                 $("#err").fadeOut();
+                $("#loader").show();
             },
             success: function(data) {
                 if (data == 'invalid') {
