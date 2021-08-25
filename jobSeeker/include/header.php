@@ -14,6 +14,9 @@
 <link href="assets/vendor/tagcomplete/tagcomplete.css" rel="stylesheet">
 <!-- Datatable -->
 <link href="assets/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+<!-- Summernote -->
+<link href="assets/vendor/summernote/summernote.css" rel="stylesheet">
+
 <!-- Main Template Style -->
 <link href="assets/css/main.css" rel="stylesheet">
 <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
@@ -85,3 +88,9 @@
     margin-top: -100px;
 }
 </style>
+
+<?php
+//login confirmation
+confirm_logged_in();
+
+?>
