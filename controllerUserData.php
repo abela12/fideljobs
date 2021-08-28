@@ -11,6 +11,8 @@ if (isset($_POST['signup'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
+    $role_id = mysqli_real_escape_string($conn, $_POST['role_id']);
+
     if ($password !== $cpassword) {
         $errors['password'] = "Confirm password not matched!";
     }
@@ -24,7 +26,7 @@ if (isset($_POST['signup'])) {
         $code = rand(999999, 111111);
         $status = "notverified";
         $insert_data = "INSERT INTO users (username, email, password, code,role_id, status)
-                        values('$username', '$email', '$encpass', '$code',2, '$status')";
+                        values('$username', '$email', '$encpass', '$code',$role_id, '$status')";
         $data_check = mysqli_query($conn, $insert_data);
         if ($data_check) {
             $to = $email;
@@ -207,6 +209,7 @@ if (isset($_POST['check'])) {
         $email = $fetch_data['email'];
         $username = $fetch_data['username'];
         $jobseekerID = $fetch_data['id'];
+        $role_id = $fetch_data['role_id'];
         $code = 0;
         $status = 'verified';
         $update_otp = "UPDATE users SET code = $code, status = '$status' WHERE code = $fetch_code";
@@ -216,10 +219,15 @@ if (isset($_POST['check'])) {
             $_SESSION['email'] = $email;
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $jobseekerID;
+            $_SESSION['role_id'] = $role_id;
 
 
 
-            header('location: jobSeeker/index.php');
+            if ($role_id == 2) {
+                header('location: jobSeeker/index.php');
+            } else if ($role_id == 3) {
+                header('location: employer/index.php');
+            }
             exit();
         } else {
             $errors['otp-error'] = "Failed while updating code!";
@@ -246,8 +254,13 @@ if (isset($_POST['login'])) {
                 $_SESSION['password'] = $password;
                 $_SESSION['id'] = $fetch['id'];
                 $_SESSION['username'] = $fetch['username'];
-
-                header('location: jobSeeker/index.php');
+                $_SESSION['role_id'] = $fetch['role_id'];
+                $role_id = $fetch['role_id'];
+                if ($role_id == 2) {
+                    header('location: jobSeeker/index.php');
+                } else if ($role_id == 3) {
+                    header('location: employer/index.php');
+                }
             } else {
                 $info = "It's look like you haven't still verify your email - $email";
                 $_SESSION['info'] = $info;
@@ -335,5 +348,5 @@ if (isset($_POST['change-password'])) {
 
 //if login now button click
 if (isset($_POST['login-now'])) {
-    header('Location: login-user.php');
+    header('Location: login.php');
 }
