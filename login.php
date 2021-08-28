@@ -3,13 +3,16 @@
 
 
 <?php include 'include/header.php' ?>
-<?php include 'database/database.php' ?>
-<?php include 'include/session.php' ?>
+<?php //include 'database/database.php' 
+?>
+<?php //include 'include/session.php' 
+?>
+<?php require_once "controllerUserData.php"; ?>
 
 
 <?php
 $demo = "not working";
-if (isset($_POST['login'])) {
+if (isset($_POST['loginnn'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
