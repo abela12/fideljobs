@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php include './database/database.php' ?>
-<?php include './include/session.php' ?>
+<?php //include './include/session.php' 
+?>
 <?php
 //login confirmation
 // confirm_logged_in();
