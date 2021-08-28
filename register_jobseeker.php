@@ -3,7 +3,9 @@
 
 
 <?php include 'include/header.php' ?>
-<?php include 'database/database.php' ?>
+<!--<?php //include 'database/database.php' 
+    ?> -->
+<?php require_once "controllerUserData.php"; ?>
 
 <body>
 
