@@ -63,35 +63,7 @@
             </div>
             <div class="col-lg-6 col-xxl-12">
                 <div class="row">
-                    <div class="col-md-12 ">
 
-                        <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
-
-                            <div class="mb-4 mb-md-0 mr-5">
-                                <div class="job-post-item-header d-flex align-items-center">
-                                    <h2 class="mr-3 text-black h3">Frontend Development</h2>
-                                    <div class="badge-wrap">
-                                        <span class="bg-primary text-white badge py-2 px-3">Partime</span>
-                                    </div>
-                                </div>
-                                <div class="job-post-item-body d-block d-md-flex">
-                                    <p>Specialized profiles can help you better highlight your expertise when submitting
-                                        proposals to jobs like theseSpecialized profiles can help you better highlight
-                                        your expertise when submitting proposals to jobs like these</p>
-
-
-                                </div>
-                            </div>
-
-                            <div class="ml-auto d-flex">
-                                <a href="job-single.html" class="btn btn-primary btn-sm py-2 mr-1">Apply Job</a>
-                                <a href="#"
-                                    class="btn btn-secondary rounded-circle btn-favorite d-flex align-items-center icon">
-                                    <span class="icon-heart"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
@@ -121,39 +93,35 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center pb-3 mb-3 border-bottom">
-                                    <img width="100px" src="assets/images/company/wordpress.png" alt="">
-                                    <span class="text-black fs-16 font-w600 mr-auto">Wordpress web design</span>
+                                <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+
+                                    <div class="mb-4 mb-md-0 mr-5">
+                                        <div class="job-post-item-header d-flex align-items-center">
+                                            <h2 class="mr-3 text-black h3">Frontend Development</h2>
+                                            <div class="badge-wrap">
+                                                <span class="bg-primary text-white badge py-2 px-3">Par time</span>
+                                            </div>
+                                        </div>
+                                        <div class="job-post-item-body d-block d-md-flex">
+                                            <p>Specialized profiles can help you better highlight your expertise when
+                                                submitting
+                                                proposals to jobs like theseSpecialized profiles can help you better
+                                                highlight
+                                                your expertise when submitting proposals to jobs like these</p>
+
+
+                                        </div>
+                                    </div>
 
                                     <div class="ml-auto d-flex">
-                                        <a href="job-single.html" class="btn btn-primary py-2 mr-1">Apply Job</a>
-
+                                        <a href="job-details.php" class="btn btn-outline-warning btn-sm py-2 mr-1">Apply
+                                            Job</a>
                                     </div>
                                 </div>
-                                <div class=" fs-2">
-                                    <ul class="d-flex justify-content-between pb-0">
-                                        <li class="font-w500 text-dark">Several web development projects for
-                                            adult
-                                            dating sites. We need a professional that will take the first
-                                            launched
-                                            site to final product and overlay it into other sites. Would
-                                            prefer to
-                                            discuss to see your interest.
 
-                                            <br>
-                                            <div>
-                                                <a class="btn btn-outline-primary btn-sm" href="job_details.html">Full
-                                                    Time</a>
-                                                <span>7 hours ago</span>
-                                            </div>
-
-                                        </li>
-
-                                    </ul>
-
-                                </div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body margin-top">
                                 <div class="card-header border-0  pb-0">
                                     <h3 class="fs-20 text-black mb-0"></h3>
                                     <div class="dropdown ml-auto">
@@ -175,77 +143,36 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center pb-3 mb-3 border-bottom">
-                                    <img width="100px" src="assets/images/logo/del.png" alt="">
-                                    <span class="text-black fs-16 font-w600">Wordpress web design</span>
-                                </div>
+                                <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
 
-                                <div class="fs-2 mb-1">
-                                    <ul class="d-flex justify-content-between pb-2">
-                                        <li class="font-w500 text-dark">Several web development projects for adult
-                                            dating sites. We need a professional that will take the first launched
-                                            site to final product and overlay it into other sites. Would prefer to
-                                            discuss to see your interest.
 
-                                            <br>
-                                            <div>
-                                                <a class="btn btn-outline-primary btn-sm" href="job_details.html">Full
-                                                    Time</a>
-                                                <span>7 hours ago</span>
+                                    <div class="mb-4 mb-md-0 mr-5">
+                                        <div class="job-post-item-header d-flex align-items-center">
+                                            <h2 class="mr-3 text-black h3">Frontend Development</h2>
+                                            <div class="badge-wrap">
+                                                <span class="bg-primary text-white badge py-2 px-3">Par time</span>
                                             </div>
-
-                                        </li>
-
-                                    </ul>
-
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-header border-0  pb-0">
-                                    <h3 class="fs-20 text-black mb-0"></h3>
-                                    <div class="dropdown ml-auto">
-                                        <div class="btn-link" data-toggle="dropdown">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                                                viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <circle fill="#000000" cx="12" cy="5" r="2"></circle>
-                                                    <circle fill="#000000" cx="12" cy="12" r="2"></circle>
-                                                    <circle fill="#000000" cx="12" cy="19" r="2"></circle>
-                                                </g>
-                                            </svg>
                                         </div>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item text-black" href="javascript:;">Details</a>
-                                            <a class="dropdown-item text-black" href="javascript:;">Details</a>
+                                        <div class="job-post-item-body d-block d-md-flex">
+                                            <p>Specialized profiles can help you better highlight your expertise when
+                                                submitting
+                                                proposals to jobs like theseSpecialized profiles can help you better
+                                                highlight
+                                                your expertise when submitting proposals to jobs like these</p>
+
+
                                         </div>
                                     </div>
+
+                                    <div class="ml-auto d-flex">
+                                        <a href="job-details.php" class="btn btn-outline-warning btn-sm py-2 mr-1">Apply
+                                            Job</a>
+                                    </div>
                                 </div>
-                                <div class="d-flex align-items-center pb-3 mb-3 border-bottom">
-                                    <img width="100px" src="assets/images/logo/del.png" alt="">
-                                    <span class="text-black fs-16 font-w600">Wordpress web design</span>
-                                </div>
-                                <div class="fs-2 mb-1">
-                                    <ul class="d-flex justify-content-between pb-2">
-                                        <li class="font-w500 text-dark">Several web development projects for adult
-                                            dating sites. We need a professional that will take the first launched
-                                            site to final product and overlay it into other sites. Would prefer to
-                                            discuss to see your interest.
 
-                                            <br>
-                                            <div>
-                                                <a class="btn btn-outline-primary btn-sm" href="job_details.html">Full
-                                                    Time</a>
-                                                <span>7 hours ago</span>
-                                            </div>
-
-                                        </li>
-
-                                    </ul>
-
-                                </div>
                             </div>
+
+
 
                         </div>
                         <div class="card-footer pt-0 border-0 text-center">
