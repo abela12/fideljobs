@@ -75,7 +75,7 @@ if ($num_row > 0) {
                     <p><?php echo $_SESSION['id'] ?></p>
                 </div>
                 <div class="profile-email px-2 pt-2">
-                    <h4 class="text-muted mb-0">avel@gmail.com</h4>
+                    <h4 class="text-muted mb-0"><?php echo $_SESSION['email'] ?></h4>
                     <p>Email</p>
                 </div>
                 <div class="dropdown ml-auto">
