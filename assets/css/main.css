@@ -1,0 +1,124 @@
+.link {
+  padding: 5px 0;
+}
+
+.link a {
+  color: #309255;
+}
+
+.forget-pass {
+  margin: 15px 0 15px 0;
+}
+
+.forget-pass a {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.wrapper {
+  display: inline-flex;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 20px 15px;
+  /* box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2); */
+}
+
+.wrapper .option {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 10px;
+  border: 2px solid lightgrey;
+  transition: all 0.4s ease;
+}
+
+.wrapper .option .dot {
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+
+.wrapper .option .dot::before {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #309255;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2 {
+  border-color: #309255;
+  background: #309255;
+}
+
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot {
+  background: #fff;
+}
+
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.wrapper .option span {
+  font-size: 20px;
+  color: #808080;
+}
+
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span {
+  color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    display: inline-block;
+    background: #fff;
+    height: 100%;
+    width: 100%;
+
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+  }
+
+  .wrapper .option {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 5px;
+    border: 2px solid lightgrey;
+    transition: all 0.4s ease;
+  }
+}
