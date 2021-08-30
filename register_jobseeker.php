@@ -2,9 +2,9 @@
 <html lang="en">
 
 
-<?php include 'include/header.php' ?>
-<!--<?php //include 'database/database.php' 
-    ?> -->
+<?php include 'include/header.php'
+?>
+
 <?php require_once "controllerUserData.php"; ?>
 
 <body>
