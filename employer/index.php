@@ -3,6 +3,9 @@
 
 <head>
     <?php include 'include/header.php' ?>
+    <?php include '../include/session.php' ?>
+
+
 
 </head>
 
@@ -82,10 +85,7 @@
                 </div>
                 <div class="row">
                     <input name="somedate" type="date" min="<?php echo date('y/m/d') ?>">
-                    <script>
-                    var today = new Date().toISOString().split('T')[0];
-                    document.getElementsByName("somedate")[0].setAttribute('min', today);
-                    </script>
+
 
                     <?php //include 'include/job-count.php' 
                     ?>
