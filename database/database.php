@@ -10,8 +10,8 @@ foreach ($db as $key => $value) {
 }
 $conn = mysqli_connect('localhost', 'root', '', 'fideljob');
 $connTest = "";
-if ($conn)
+// if ($conn)
 
-    echo $connTest = "<h6>Database Connected everything is fine 🌝</h6>";
-else
-    echo "not working";
+//     echo $connTest = "<h6>Database Connected everything is fine 🌝</h6>";
+// else
+//     echo "not working";
