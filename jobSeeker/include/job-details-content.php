@@ -1,10 +1,3 @@
-<?php
-// $pizza  = "piece1 piece2 . piece3 piece4 piece5. piece6";
-// $pieces = explode(".", $pizza);
-
-// foreach ($pieces as $key)
-//     echo $key;
-?>
 <div class="content-body">
     <!-- row -->
     <div class="container-fluid">
@@ -96,24 +89,25 @@
                                         <div class="read-content-body">
                                             <div class="basic-list-group col-md-12 col-sm-12">
                                                 <ul class="list-group">
-                                                    <li class="list-group-item">
-                                                        Category <h6 class="badge badge-xl light badge-warning">
-                                                            Accounting and Finance, Banking and Insurance</h6>
+                                                    <li
+                                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                                        Category <strong class="">
+                                                            Accounting and Finance, Banking and Insurance</strong>
                                                     </li>
                                                     <li
                                                         class="list-group-item d-flex justify-content-between align-items-center">
-                                                        Location <span class="badge badge-primary badge-pill">Addis
-                                                            Abeba</span>
+                                                        Location <strong class="">Addis
+                                                            Abeba</strong>
                                                     </li>
                                                     <li
                                                         class="list-group-item d-flex justify-content-between align-items-center">
-                                                        Career Level: <span class="badge badge-primary badge-pill">Full
-                                                            time</span>
+                                                        Career Level: <strong class="">Full
+                                                            time</strong>
                                                     </li>
                                                     <li
                                                         class="list-group-item d-flex justify-content-between align-items-center">
-                                                        Salary <span class="badge badge-primary badge-pill"> As per the
-                                                            Bank`s attractive salary scale</span>
+                                                        Salary <strong class=""> As per the
+                                                            Bank`s attractive salary scale</strong>
                                                     </li>
 
                                                 </ul>
@@ -181,5 +175,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>
