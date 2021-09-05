@@ -3,9 +3,10 @@
 
 <head>
     <?php include 'include/header.php';
+    $msg = "";
     $job_id = intval($_GET['id']);
     if (isset($_GET['action']) and $_GET['action'] == 'Closed') {
-        $closed_job = mysqli_query($conn, "UPDATE `job` SET `job_status`= 'closed' WHERE id = '$job_id'");
+        $closed_job = mysqli_query($conn, "UPDATE `job` SET `job_status`= 'Closed' WHERE id = '$job_id'");
         if ($closed_job) {
             $msgClass = "alert alert-secondary";
             $msg = "yes";
