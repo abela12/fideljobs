@@ -2,7 +2,23 @@
 <html lang="en">
 
 <head>
-    <?php include 'include/header.php'
+    <?php include 'include/header.php';
+    $msgClass = "alert alert-success";
+    $msg = "";
+
+    if (isset($_GET['jobId'])) {
+
+        $jobId = intval($_GET['jobId']);
+        if (isset($_GET['action']) && $_GET['action'] == "delete") {
+            $delete_job = mysqli_query($conn, "UPDATE `job` SET `job_status`= 'delete' WHERE id = '$jobId'");
+            if ($delete_job) {
+                $msgClass = "alert alert-secondary";
+                $msg = "yes";
+                // header("location:my-jobs.php");
+            }
+        }
+    }
+
     ?>
 
 </head>
@@ -65,7 +81,7 @@
             <div class="container-fluid">
                 <div class="page-titles">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Jobs</a></li>
+                        <li class="breadcrumb-item"><a href="my-jobs.php">Jobs</a></li>
                         <li class="breadcrumb-item active"><a href="javascript:void(0)">Applied Jobs</a></li>
                     </ol>
                 </div>
