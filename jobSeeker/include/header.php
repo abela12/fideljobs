@@ -24,7 +24,7 @@
 ?>
 <?php require '../controllerUserData.php' ?>
 <?php include '../include/session.php' ?>
-<?php include 'include/function.php' ?>
+<?php require '../configuration/function.php' ?>
 <style>
 .profile ul li {
     text-transform: uppercase;
