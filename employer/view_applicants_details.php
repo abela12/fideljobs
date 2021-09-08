@@ -28,7 +28,7 @@
 <body>
 
     <!--*******************
-        Preloader start
+       FIXME: spilling error (Preloader) Preloader start
     ********************-->
     <?php include 'include/preloder.php' ?>
     <!--*******************
