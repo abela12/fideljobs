@@ -22,9 +22,12 @@
 <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 <?php //include '../database/database.php' 
 ?>
-<?php require '../controllerUserData.php' ?>
-<?php include '../include/session.php' ?>
-<?php require '../configuration/function.php' ?>
+<?php require '../controllerUserData.php'; ?>
+<?php include '../include/session.php'; ?>
+<?php require '../configuration/function.php';
+
+?>
+
 <style>
 .profile ul li {
     text-transform: uppercase;
