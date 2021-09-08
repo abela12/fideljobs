@@ -1,12 +1,15 @@
 <?php
 session_start();
 require "database/database.php";
+
 $email = "";
 $name = "";
 $errors = array();
 
 //if user signup button
 if (isset($_POST['signup'])) {
+    $fName = mysqli_real_escape_string($conn, $_POST['fName']);
+    $lName = mysqli_real_escape_string($conn, $_POST['lName']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -25,8 +28,8 @@ if (isset($_POST['signup'])) {
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $status = "notverified";
-        $insert_data = "INSERT INTO users (username, email, password, code,role_id, status)
-                        values('$username', '$email', '$encpass', '$code',$role_id, '$status')";
+        $insert_data = "INSERT INTO users (fName, lName,username, email, password, code,role_id, status)
+                        values('$fName', '$lName','$username', '$email', '$encpass', '$code',$role_id, '$status')";
         $data_check = mysqli_query($conn, $insert_data);
         if ($data_check) {
             $to = $email;
