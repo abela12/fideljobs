@@ -5,6 +5,7 @@
     <?php include 'include/header.php'; ?>
 
 
+
 </head>
 
 <body>
@@ -61,7 +62,7 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body">
+        <div class="content-body h-100" style="min-height:100% ;">
             <div class="container-fluid">
                 <div class="page-titles">
                     <ol class="breadcrumb">
