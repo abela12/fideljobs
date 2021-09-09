@@ -6,20 +6,46 @@
     $msgClass = "alert alert-secondary";
     $msg = "";
 
-    if (isset($_GET['jobId'])) {
+    if (isset($_GET['job_id']) && $_GET['job_id'] != "" && isset($_GET['jobseekerid']) && $_GET['jobseekerid'] != "") {
 
-        $jobId = intval($_GET['jobId']);
-        if (isset($_GET['action']) && $_GET['action'] == "delete") {
-            $delete_job = mysqli_query($conn, "UPDATE `job` SET `job_status`= 'delete' WHERE id = '$jobId'");
-            if ($delete_job) {
-                $msgClass = "alert alert-secondary";
+        $jobseekerid = $_GET['jobseekerid'];
+        $jobId = $_GET['job_id'];
+
+        if (isset($_GET['action']) && $_GET['action'] == "Approve") {
+            $approve_job = mysqli_query(
+                $conn,
+                "UPDATE applicants set `status`='Approve' WHERE job_id= '$jobId' AND jobseeker_id='$jobseekerid'"
+            );
+            if ($approve_job) {
+                $msgClass = "alert alert-success";
                 $msg = "yes";
+                $msgContent = "User Successfully Approved";
                 // header("location:my-jobs.php");
+            } else {
+                $msgClass = "alert alert-warning";
+                $msg = "yes";
+            }
+        }
+        if (isset($_GET['action']) && $_GET['action'] == "Rejected") {
+            $rejected_job = mysqli_query(
+                $conn,
+                "UPDATE applicants set `status`='Rejected' WHERE job_id= '$jobId' AND jobseeker_id='$jobseekerid'"
+            );
+            if ($rejected_job) {
+                $msgClass = "alert alert-success";
+                $msg = "yes";
+                $msgContent = "User Successfully Rejected";
+                // header("location:my-jobs.php");
+            } else {
+                $msgClass = "alert alert-warning";
+                $msg = "yes";
             }
         }
     }
-    if (isset($_GET['id'])) {
-        $jobId = intval($_GET['id']);
+    if (isset($_GET['job_id'])) {
+        $jobId = intval($_GET['job_id']);
+    } else {
+        // $jobId = "";
     }
     ?>
 
