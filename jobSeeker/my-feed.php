@@ -63,7 +63,7 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <?php include 'include/mainContent.php' ?>
+        <?php include 'job/my-feed-job-list-content.php' ?>
         <!--**********************************
             Content body end
         ***********************************-->
