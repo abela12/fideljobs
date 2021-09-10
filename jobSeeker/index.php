@@ -35,6 +35,21 @@
         padding-top: 35px;
         text-align: center
     }
+
+    /* Load more */
+
+
+    .load-more:hover {
+        cursor: pointer;
+    }
+
+    /* more link */
+    .more {
+        color: blue;
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-size: 16px;
+    }
     </style>
 </head>
 
@@ -128,6 +143,9 @@
     ***********************************-->
     <!-- Required vendors -->
     <?php include 'include/script.php' ?>
+    <script>
+
+    </script>
 
 
 </body>
