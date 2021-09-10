@@ -27,7 +27,11 @@
 <?php require '../configuration/function.php';
 
 ?>
+<?php
+//login confirmation
+confirm_logged_in();
 
+?>
 <style>
 .profile ul li {
     text-transform: uppercase;
