@@ -53,4 +53,28 @@ window.location = "../login.php";
 <?php
     }
 }
+
+function checkNumRow($sql)
+{
+    global $conn;
+
+    $check_num_row = mysqli_query($conn, $sql);
+    $check_num_row = mysqli_num_rows($check_num_row);
+    if ($check_num_row > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function fetchData($sql)
+{
+    global $conn;
+    $fetch_data = mysqli_query($conn, $sql);
+    $check_num = checkNumRow($sql);
+    if ($check_num) {
+        return $fetch_data;
+    } else {
+        return false;
+    }
+}
 ?>
