@@ -30,6 +30,7 @@
 <?php
 //login confirmation
 confirm_logged_in();
+$jobseeker_id = $_SESSION['id'];
 
 ?>
 <style>
