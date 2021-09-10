@@ -49,7 +49,7 @@ while ($data = mysqli_fetch_assoc($result)) {
     $html .= '<h3 class="fs-20 text-black mb-0"></h3>';
     $html .= '<div class="dropdown ml-auto">';
     $html .= '<div class="btn-link" data-toggle="dropdown">';
-    $html .= '    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    $html .= '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect x="0" y="0" width="24" height="24"></rect>
@@ -79,7 +79,7 @@ while ($data = mysqli_fetch_assoc($result)) {
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="ml-auto d-flex">';
-    $html .= '<a href="job-details.php?=job_id' . $id . '" class="btn btn-outline-warning btn-sm py-2 mr-1">Apply Job</a>';
+    $html .= '<a href="job-details.php?job_id=' . $id . '" class="btn btn-outline-warning btn-sm py-2 mr-1">Apply Job</a>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '</div>';
