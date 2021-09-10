@@ -144,6 +144,136 @@ $(document).ready(function(e) {
 });
 </script>
 <script>
+$(document).ready(function() {
+
+    //Main Load more jobs
+    $('.load-more').click(function() {
+        var row = Number($('#row').val());
+        var allcount = Number($('#all').val());
+        var rowperpage = 3;
+        row = row + rowperpage;
+
+        if (row <= allcount) {
+            $("#row").val(row);
+
+            $.ajax({
+                url: 'job/main-fetch-jobs.php',
+                type: 'post',
+                data: {
+                    row: row
+                },
+                beforeSend: function() {
+                    $(".load-more").text("Loading...");
+                },
+                success: function(response) {
+
+                    // Setting little delay while displaying new jobs
+                    setTimeout(function() {
+                        // appending posts after last job with class="jobs"
+                        $(".jobs:last").after(response).show().fadeIn("slow");
+
+                        var rowno = row + rowperpage;
+
+                        // checking row value is greater than allcount or not
+                        if (rowno > allcount) {
+
+                            // Change the text and background
+                            $('.load-more').text("Hide");
+                            $('.load-more').css("background", "darkorchid");
+                        } else {
+                            $(".load-more").text("Load more");
+                        }
+                    }, 2000);
+
+                }
+            });
+        } else {
+            $('.load-more').text("Loading...");
+
+            // Setting little delay while removing contents
+            setTimeout(function() {
+
+                // When row is greater than allcount then remove all class='jobs' element after 3 element
+                $('.jobs:nth-child(3)').nextAll('.jobs').remove();
+
+                // Reset the value of row
+                $("#row").val(0);
+
+                // Change the text and background
+                $('.load-more').text("Load more");
+                $('.load-more').css("background", "#309255");
+
+            }, 2000);
+
+
+        }
+
+    });
+    //My Feed Load more jobs
+    $('.feed-load-more').click(function() {
+        var row = Number($('#row').val());
+        var allcount = Number($('#all').val());
+        var rowperpage = 3;
+        row = row + rowperpage;
+
+        if (row <= allcount) {
+            $("#row").val(row);
+
+            $.ajax({
+                url: 'job/my-feed-jobs.php',
+                type: 'post',
+                data: {
+                    row: row
+                },
+                beforeSend: function() {
+                    $(".feed-load-more").text("Loading...");
+                },
+                success: function(response) {
+
+                    // Setting little delay while displaying new jobs
+                    setTimeout(function() {
+                        // appending posts after last job with class="jobs"
+                        $(".jobs:last").after(response).show().fadeIn("slow");
+
+                        var rowno = row + rowperpage;
+
+                        // checking row value is greater than allcount or not
+                        if (rowno > allcount) {
+
+                            // Change the text and background
+                            $('.feed-load-more').text("Hide");
+                            $('.feed-load-more').css("background", "darkorchid");
+                        } else {
+                            $(".feed-load-more").text("Load more");
+                        }
+                    }, 2000);
+
+                }
+            });
+        } else {
+            $('.feed-load-more').text("Loading...");
+
+            // Setting little delay while removing contents
+            setTimeout(function() {
+
+                // When row is greater than allcount then remove all class='jobs' element after 3 element
+                $('.jobs:nth-child(3)').nextAll('.jobs').remove();
+
+                // Reset the value of row
+                $("#row").val(0);
+
+                // Change the text and background
+                $('.feed-load-more').text("Load more");
+                $('.feed-load-more').css("background", "#309255");
+
+            }, 2000);
+
+
+        }
+
+    });
+
+});
 $("#skill-list").select2({
 
     maximumSelectionLength: 15
