@@ -9,7 +9,7 @@
 
                 </div>
                 <?php
-                $rowperpage = 3;
+                $rowperpage = 10;
 
                 // counting total number of posts
                 $allcount_query = "SELECT count(*) as allcount FROM job";
@@ -17,8 +17,8 @@
                 $allcount_fetch = mysqli_fetch_array($allcount_result);
                 $allcount = $allcount_fetch['allcount'];
 
-                // select first 5 posts
-                $query = "select * from job order by id asc limit 0,$rowperpage ";
+                // Select First 10 Jobs
+                $query = "SELECT * FROM job ORDER BY `job`.`id` DESC limit 0,$rowperpage ";
                 $result = mysqli_query($conn, $query);
                 // $my_job = mysqli_query($conn, "SELECT * FROM `job` WHERE 1");
                 while ($data = mysqli_fetch_assoc($result)) {
