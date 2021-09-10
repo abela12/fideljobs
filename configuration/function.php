@@ -38,3 +38,19 @@ function timePosted($datetime, $full = false)
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
+function logged_in()
+{
+    return isset($_SESSION['id']);
+}
+//this function if session member is not set then it will be redirected to index.php
+function confirm_logged_in()
+{
+    if (!logged_in()) { ?>
+<script type="text/javascript">
+window.location = "../login.php";
+</script>
+
+<?php
+    }
+}
+?>
