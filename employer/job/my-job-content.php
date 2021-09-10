@@ -21,6 +21,7 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Posted Jobs List</h4>
+
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -32,7 +33,7 @@
                                 <th>Experience Level</th>
 
                                 <th>DeadLine</th>
-                                <th>Salary Type</th>
+                                <th>Application</th>
                                 <th>Status</th>
                                 <th>Action</th>
 
@@ -42,7 +43,8 @@
 
 
                             <?php
-                            $my_job = mysqli_query($conn, "SELECT * FROM `job` WHERE `job_status` != 'delete'");
+                            $user_id = $_SESSION['id'];
+                            $my_job = mysqli_query($conn, "SELECT * FROM `job` WHERE `job_status` != 'delete' AND user_id ='$user_id'");
                             while ($data = mysqli_fetch_assoc($my_job)) {
                                 $id = $data['id'];
                                 $user_id = $data['user_id'];
@@ -80,6 +82,8 @@
                                 if ($job_status == 'Rejected') {
                                     $btnClass = "badge-danger";
                                 }
+                                $select_applicants = mysqli_query($conn, "SELECT job.id , `user_id`, `job_title` FROM `job` INNER JOIN applicants on job.id = applicants.job_id WHERE user_id ='$user_id' AND job.id= '$id'");
+                                $select_applicants_num = mysqli_num_rows($select_applicants);
                             ?>
                             <tr>
                                 <td><?php echo htmlspecialchars($job_title) ?></td>
@@ -87,7 +91,12 @@
                                 <td><?php echo htmlspecialchars($job_experience_level) ?></td>
 
                                 <td><?php echo htmlspecialchars($job_deadline) ?></td>
-                                <td><?php echo htmlspecialchars($job_salary_type) ?></td>
+                                <td>
+                                    <a href="view_applicants.php?job_id=<?php echo $id ?>" draggable="false"><abbr
+                                            data-title="View Applicants">(<?php echo htmlspecialchars($select_applicants_num) ?>)applicants
+                                        </abbr></a>
+
+                                </td>
                                 <td> <span
                                         class="badge light <?php echo $btnClass ?>"><?php echo htmlspecialchars($job_status) ?></span>
                                 </td>
@@ -115,7 +124,7 @@
                                 <th>Experience Level</th>
 
                                 <th>DeadLine</th>
-                                <th>Salary Type</th>
+                                <th>Application</th>
                                 <th>Status</th>
                                 <th>Action</th>
 

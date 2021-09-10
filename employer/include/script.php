@@ -48,8 +48,47 @@ window.setTimeout(function() {
 </script>
 
 <script>
-// Job Deadline Date Limit
 $(document).ready(function(e) {
+    // For Job Type Select From
+    $('#job_apply_type').on('change', function() {
+        var category_id = this.value;
+        console.log("it works");
+        $.ajax({
+            url: "job/select_job_type.php",
+            type: "POST",
+            data: {
+                category_id: category_id
+            },
+            cache: false,
+
+
+
+            success: function(result) {
+                $("#job_type_list").html(result);
+            }
+        });
+    });
+    // For Salary Type Select From
+    $('#job_salary_type').on('change', function() {
+        var category_id = this.value;
+        console.log("it works");
+        $.ajax({
+            url: "job/select_salary_type.php",
+            type: "POST",
+            data: {
+                category_id: category_id
+            },
+            cache: false,
+
+
+
+            success: function(result) {
+                $("#job_salary_list").html(result);
+            }
+        });
+    });
+
+    // For Job Description
     $('.summernote').summernote();
     popover: {
         image: [
@@ -61,7 +100,7 @@ $(document).ready(function(e) {
             ['remove', ['removeMedia']]
         ]
     }
-
+    // Job Deadline Date Limit
     var today = new Date().toISOString().split("T")[0];
     document.getElementsByName("job_deadline")[0].setAttribute("min", today);
 });
