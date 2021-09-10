@@ -69,7 +69,7 @@
                     </ol>
                 </div>
                 <!-- row -->
-                <div class="row">
+                <div class="row" id="cvs">
                     <div class="col-lg-12">
                         <!-- Profile Banner -->
                         <?php include 'include/profile-banner.php' ?>
@@ -79,12 +79,12 @@
 
                     <div class="col-xl-4">
                         <div class="card">
-
+                            <?php include 'cvs/cvs-sidebar.php' ?>
                         </div>
                     </div>
                     <div class="col-xl-8">
                         <div class="card">
-                            <h1>My CV</h1>
+                            <?php include 'cvs/upload-cvs.php' ?>
                         </div>
                     </div>
                 </div>
