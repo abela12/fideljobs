@@ -27,7 +27,7 @@
 ?>
 <?php require '../controllerUserData.php' ?>
 <?php include '../include/session.php' ?>
-<?php include 'include/function.php' ?>
+<?php require '../configuration/function.php' ?>
 <style>
 .profile ul li {
     text-transform: uppercase;
@@ -116,6 +116,29 @@
     font-size: 2rem;
     color: #585858;
     line-height: 50px;
+}
+
+/* Toolkit 2 */
+abbr[data-title] {
+    position: relative;
+    text-decoration: underline dotted;
+}
+
+abbr[data-title]:hover::after,
+abbr[data-title]:focus::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    width: auto;
+    white-space: nowrap;
+    background: #309255;
+    color: #fff;
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    padding: 3px 5px;
 }
 </style>
 
