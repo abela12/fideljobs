@@ -28,8 +28,8 @@
                     <ul class="social">
                         <li><a href="#"><i class="flaticon-facebook"></i></a></li>
                         <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                        <li><a href="#"><i class="flaticon-skype"></i></a></li>
-                        <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                        <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-telegram"></i></a></li>
                     </ul>
                 </div>
                 <!-- Header Top Right End -->
@@ -80,8 +80,8 @@
                 <!-- Header Sing In & Up Start -->
                 <div class="header-sign-in-up d-none d-lg-block">
                     <ul>
-                        <li><a class="sign-in" href="register_jobseeker.php">JobSeeker</a></li>
-                        <li><a class="sign-up" href="register_employer.php">Employer</a></li>
+                        <li><a class="sign-in" href="login.php">Login</a></li>
+                        <li><a class="sign-up" href="register_jobseeker.php">Register</a></li>
                     </ul>
                 </div>
                 <!-- Header Sing In & Up End -->
