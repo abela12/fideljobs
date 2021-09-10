@@ -1,22 +1,25 @@
 <?php
-//before we store information of our member, we need to start first the session
-
-session_start();
-
-//create a new function to check if the session variable member_id is on set
-function logged_in()
-{
-    return isset($_SESSION['id']);
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
-//this function if session member is not set then it will be redirected to index.php
-function confirm_logged_in()
-{
-    if (!logged_in()) { ?>
-<script type="text/javascript">
-window.location = "../login.php";
-</script>
-
-<?php
+$email = $_SESSION['email'];
+$password = $_SESSION['password'];
+$jobseekerID = isset($_SESSION['id']);
+if ($email != false && $password != false) {
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $run_Sql = mysqli_query($conn, $sql);
+    if ($run_Sql) {
+        $fetch_info = mysqli_fetch_assoc($run_Sql);
+        $status = $fetch_info['status'];
+        $code = $fetch_info['code'];
+        if ($status == "verified") {
+            if ($code != 0) {
+                header('Location: reset-code.php');
+            }
+        } else {
+            header('Location: user-otp.php');
+        }
     }
+} else {
+    header('Location: ../login.php');
 }
-?>

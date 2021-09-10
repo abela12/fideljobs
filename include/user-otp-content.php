@@ -1,4 +1,4 @@
-<div class="section section-padding" id="login-form">
+<div class="section section-padding">
     <div class="container">
 
         <!-- Register & Login Wrapper Start -->
@@ -23,40 +23,46 @@
                 </div>
                 <div class="col-lg-6">
 
-                    <!-- Register & Login Form Start -->
+                    <!-- Code Verification Form Start -->
                     <div class="register-login-form">
-                        <h3 class="title">Login <span>Now</span></h3>
+                        <h3 class="title">Code Verification <span>Now</span></h3>
+
 
                         <div class="form-wrapper">
-                            <form action="login.php#login-form" method="post">
+                            <form action="user-otp.php" method="post" id="form">
+                                <?php
+                                if (isset($_SESSION['info'])) {
+                                ?>
+                                <div class="alert alert-success text-center">
+                                    <?php echo $_SESSION['info']; ?>
+                                </div>
+                                <?php
+                                }
+                                ?>
                                 <?php
                                 if (count($errors) > 0) {
                                 ?>
-                                    <div class="alert alert-danger text-center">
-                                        <?php
+                                <div class="alert alert-danger text-center">
+                                    <?php
                                         foreach ($errors as $showerror) {
                                             echo $showerror;
                                         }
                                         ?>
-                                    </div>
+                                </div>
                                 <?php
-                                } ?>
+                                }
+                                ?>
                                 <!-- Single Form Start -->
                                 <div class="single-form">
-                                    <input name="email" type="text" placeholder="Email" required>
+                                    <input type="number" name="otp" placeholder="Enter verification code" required>
                                 </div>
+
                                 <!-- Single Form End -->
                                 <!-- Single Form Start -->
                                 <div class="single-form">
-                                    <input name="password" type="password" placeholder="Password" required>
-                                </div>
-                                <!-- Single Form End -->
-                                <!-- Single Form Start -->
-                                <div class="link forget-pass text-left"><a href="forgot-password.php">Forgot
-                                        password?</a></div>
-                                <div class="single-form">
-                                    <button type="submit" name="login" class="btn btn-primary btn-hover-dark w-100">Login</button>
-                                    <a class="btn btn-secondary btn-outline w-100" href="#">Login with Google</a>
+                                    <button type="submit" name="check"
+                                        class="btn btn-primary btn-hover-dark w-100">Submit</button>
+
                                 </div>
                                 <!-- Single Form End -->
                             </form>
