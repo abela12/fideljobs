@@ -11,7 +11,7 @@
                 <?php
                 $rowperpage = 10;
 
-                // counting total number of posts
+                // counting total number of Jobs
                 $allcount_query = "SELECT count(*) as allcount FROM job";
                 $allcount_result = mysqli_query($conn, $allcount_query);
                 $allcount_fetch = mysqli_fetch_array($allcount_result);
