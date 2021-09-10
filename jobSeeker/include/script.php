@@ -280,3 +280,11 @@ $("#skill-list").select2({
 
 });
 </script>
+<!-- Bootstrap Alert Automatic Fade In -->
+<script>
+window.setTimeout(function() {
+    $(".alert").fadeTo(800, 0).slideUp(800, function() {
+        $(this).remove();
+    });
+}, 2000);
+</script>
