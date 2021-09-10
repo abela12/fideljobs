@@ -96,7 +96,7 @@
         <!--**********************************
             Content body start
         ***********************************-->
-        <?php include 'include/job-details-content.php' ?>
+        <?php include 'job/job-details-content.php' ?>
         <!--**********************************
             Content body end
         ***********************************-->
