@@ -29,9 +29,22 @@
                         <div class="card widget-stat ">
                             <div class="card-body p-4">
                                 <div class="media align-items-center">
+                                    <?php
+                                    $jobseekerId = $_SESSION['id'];
+                                    $total_jobs = mysqli_query($conn, "SELECT * FROM `job` WHERE 1");
+                                    $total_jobs_num = mysqli_num_rows($total_jobs);
+
+
+                                    $total_apply_jobs = mysqli_query($conn, "SELECT * FROM `applicants` WHERE `jobseeker_id` = '$jobseekerId'");
+                                    $total_apply_jobs_num = mysqli_num_rows($total_apply_jobs);
+
+
+
+
+                                    ?>
                                     <div class="media-body">
                                         <p class="fs-18 mb-2 wspace-no">Total Jobs</p>
-                                        <h1 class="fs-36 font-w600 text-black mb-0">260</h1>
+                                        <h1 class="fs-36 font-w600 text-black mb-0"><?php echo $total_jobs_num ?></h1>
                                     </div>
                                     <span class="ml-3 bg-primary text-white">
                                         <i class="flaticon-381-promotion"></i>
@@ -47,7 +60,7 @@
                                     <div class="media-body">
                                         <p class="fs-18 mb-2 wspace-no">Total Apply Jobs </p>
                                         <h1 class="fs-36 font-w600 d-flex align-items-center text-black mb-0">
-                                            65</h1>
+                                            <?php echo $total_apply_jobs_num ?></h1>
                                     </div>
                                     <span class="ml-3 bg-warning text-white">
                                         <i class="flaticon-381-user-7"></i>
@@ -64,5 +77,4 @@
             <?php require 'job/main-job-list-content.php' ?>
         </div>
     </div>
-</div>
 </div>
