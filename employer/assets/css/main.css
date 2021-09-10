@@ -1,0 +1,6 @@
+@media (max-width: 767px) {
+  .nav-header .logo-brand {
+    display: block;
+    max-width: 60px;
+  }
+}
