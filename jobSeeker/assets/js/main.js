@@ -145,7 +145,7 @@ $("#addCertificate").on("click", function () {
       } else {
         swal(
           "Good job!",
-          "You Social Media Successfully Inserted!",
+          "You Certificate Media Successfully Inserted!",
           "success"
         ).then(function () {
           //  location.reload();
@@ -153,6 +153,35 @@ $("#addCertificate").on("click", function () {
         $(".add-certificate").modal("hide");
         // alert(result);
         $("#add-certificate")[0].reset();
+      }
+    },
+  });
+});
+
+// Apply Job
+$("#applyJob").on("click", function () {
+  var formdata = $("#apply-job").serialize();
+  console.log(formdata);
+
+  $.ajax({
+    url: "action/applyJob.php",
+    type: "POST",
+    data: formdata,
+    processData: false,
+    cache: false,
+    success: function (result) {
+      if (result == "invalid") {
+        // invalid file format.
+        $("#err").html("Invalid File !").fadeIn();
+      } else {
+        swal("Good job!", "Successfully Inserted!", "success").then(
+          function () {
+            location.reload();
+          }
+        );
+        $(".apply-job").modal("hide");
+        // alert(result);
+        $("#apply-job")[0].reset();
       }
     },
   });
