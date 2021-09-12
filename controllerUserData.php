@@ -252,17 +252,23 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $fetch_pass)) {
             $_SESSION['email'] = $email;
             $status = $fetch['status'];
+            $account_status = $fetch['account_status'];
+
             if ($status == 'verified') {
-                $_SESSION['email'] = $email;
-                $_SESSION['password'] = $password;
-                $_SESSION['id'] = $fetch['id'];
-                $_SESSION['username'] = $fetch['username'];
-                $_SESSION['role_id'] = $fetch['role_id'];
-                $role_id = $fetch['role_id'];
-                if ($role_id == 2) {
-                    header('location: jobSeeker/index.php');
-                } else if ($role_id == 3) {
-                    header('location: employer/index.php');
+                if ($account_status == 'active') {
+                    $_SESSION['email'] = $email;
+                    $_SESSION['password'] = $password;
+                    $_SESSION['id'] = $fetch['id'];
+                    $_SESSION['username'] = $fetch['username'];
+                    $_SESSION['role_id'] = $fetch['role_id'];
+                    $role_id = $fetch['role_id'];
+                    if ($role_id == 2) {
+                        header('location: jobSeeker/index.php');
+                    } else if ($role_id == 3) {
+                        header('location: employer/index.php');
+                    }
+                } else {
+                    $errors['email'] = "this Account is suspended ";
                 }
             } else {
                 $info = "It's look like you haven't still verify your email - $email";
