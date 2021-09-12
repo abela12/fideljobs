@@ -32,13 +32,13 @@
                                 <?php
                                 if (count($errors) > 0) {
                                 ?>
-                                    <div class="alert alert-danger text-center">
-                                        <?php
+                                <div class="alert alert-danger text-center">
+                                    <?php
                                         foreach ($errors as $showerror) {
                                             echo $showerror;
                                         }
                                         ?>
-                                    </div>
+                                </div>
                                 <?php
                                 } ?>
                                 <!-- Single Form Start -->
@@ -55,8 +55,10 @@
                                 <div class="link forget-pass text-left"><a href="forgot-password.php">Forgot
                                         password?</a></div>
                                 <div class="single-form">
-                                    <button type="submit" name="login" class="btn btn-primary btn-hover-dark w-100">Login</button>
-                                    <a class="btn btn-secondary btn-outline w-100" href="#">Login with Google</a>
+                                    <button type="submit" name="login"
+                                        class="btn btn-primary btn-hover-dark w-100">Login</button>
+                                    <a class="btn btn-secondary btn-outline w-100"
+                                        href="register_jobseeker.php">Register</a>
                                 </div>
                                 <!-- Single Form End -->
                             </form>
