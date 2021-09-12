@@ -1,5 +1,6 @@
 <?php
 
+// trim form data
 function escape($string)
 {
 
@@ -11,6 +12,7 @@ function escape($string)
 // post ago function
 function timePosted($datetime, $full = false)
 {
+
     $now = new DateTime;
     $ago = new DateTime($datetime);
     $diff = $now->diff($ago);
@@ -42,7 +44,7 @@ function logged_in()
 {
     return isset($_SESSION['id']);
 }
-//this function if session member is not set then it will be redirected to index.php
+//this function if session member is not set then it will be redirected to login.php
 function confirm_logged_in()
 {
     if (!logged_in()) { ?>
@@ -53,7 +55,7 @@ window.location = "../login.php";
 <?php
     }
 }
-
+// Check Num Row
 function checkNumRow($sql)
 {
     global $conn;
@@ -66,6 +68,8 @@ function checkNumRow($sql)
         return false;
     }
 }
+
+// Fetch sql data
 function fetchData($sql)
 {
     global $conn;
@@ -77,4 +81,16 @@ function fetchData($sql)
         return false;
     }
 }
+// Calculate Deadline 
+function dateDifference($start_date, $end_date)
+{
+    // calculating the difference in timestamps 
+    $diff = strtotime($end_date) - strtotime($start_date);
+
+
+    // 1 day = 24 hours 
+    // 24 * 60 * 60 = 86400 seconds
+    return ceil($diff / 86400);
+}
+
 ?>
