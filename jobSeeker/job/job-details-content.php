@@ -57,6 +57,12 @@
                                         $jobseeker_Id = $_SESSION['id'];
                                         if (isset($_GET['job_id']) && $_GET['job_id'] != '') {
                                             $job_id = intval($_GET['job_id']);
+                                            // store the IDs of the recently viewed posts, in order to not increment the counter if the same job seeker view them again.
+                                            // if (!isset($_SESSION['recent_posts'][$job_id])) {
+                                            //     $update_views = mysqli_query($conn, "UPDATE `views_count` SET `views`=`views` + 1 WHERE `job_id` = '$job_id'");
+                                            //     $_SESSION['recent_posts'][$job_id] = 1;
+                                            // }
+                                            $update_views = mysqli_query($conn, "UPDATE `views_count` SET `views`=`views` + 1 WHERE `job_id` = '$job_id'");
                                         }
                                         $my_job = mysqli_query($conn, "SELECT * FROM `job` WHERE `id` ='$job_id'");
                                         while ($data = mysqli_fetch_assoc($my_job)) {
@@ -87,6 +93,13 @@
                                             $dateObj   = DateTime::createFromFormat('!m', $monthNum);
                                             $monthName = $dateObj->format('F'); // March
                                             $job_status = $data['job_status'];
+                                            $current_date = date("Y-m-d");
+                                            $dateDiff = dateDifference("$current_date", "$job_deadline");
+                                            if ($dateDiff >= 0) {
+                                                $deadline = true;
+                                            } else {
+                                                $deadline = false;
+                                            }
                                         ?>
                                         <div class="media pt-3">
                                             <img class="mr-2 rounded" width="50" alt="image"
@@ -95,7 +108,12 @@
                                                 <h5 class="text-primary mb-0 mt-1">Job by Dashen Bank S.C
                                                 </h5>
                                                 <p class="mb-0 text-danger">Dead line
-                                                    <?php echo htmlspecialchars($job_deadline) ?></p>
+                                                    <?php //echo htmlspecialchars($job_deadline) 
+                                                        ?></p>
+                                                <p><?php
+                                                        ?></p>
+                                                <?php //echo date("Y-m-d") 
+                                                    ?>
                                             </div>
 
 
@@ -376,7 +394,7 @@
                                         $select_cv = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` ='$jobseeker_Id'");
                                         $cv_num = mysqli_num_rows($select_cv);
 
-                                        if ($cv_num > 0 && $job_apply_type == 'Internal') {
+                                        if ($cv_num > 0 && $job_apply_type == 'Internal' && $deadline) {
                                             $stat = true;
                                     ?>
                                     <div class="text-right">
@@ -387,7 +405,7 @@
                                     <?php
                                         } else if (!$cv_num > 0 && $job_apply_type == 'Internal') {
                                             echo "<h1>pls upload ch</h1>";
-                                        } else if ($job_apply_type == 'External URL') {
+                                        } else if ($job_apply_type == 'External URL' && $deadline) {
                                         ?>
                                     <div>
                                         <h4>How to apply
@@ -409,7 +427,7 @@
     
                                         </div>';
                                             }
-                                        } else if ($job_apply_type == 'By Email') {
+                                        } else if ($job_apply_type == 'By Email' && $deadline) {
                                             ?>
                                     <hr>
                                     <div>
@@ -425,6 +443,8 @@
                                     </div>
                                     <?php
                                             // echo "<h1>the job type is by email you can apply bey using this email</h1>";
+                                        } else if (!$deadline) {
+                                            echo "job closed due to dead line";
                                         }
                                     }
 
