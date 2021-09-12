@@ -56,14 +56,19 @@ if (isset($_POST['submit'])) {
     $job_preferred_sex = $_POST['job_preferred_sex'];
     $job_location = $_POST['job_location'];
     $job_deadline = $_POST['job_deadline'];
+    $job_post_date = $_POST['date'];
 
 
-    $insert_job = mysqli_query($conn, "INSERT INTO `job`(`user_id`, `job_title`, `job_email`,`job_short_description`, `job_description`, `job_tags`, `job_experience`, `job_type`, `job_apply_type`, `job_experience_level`, `job_external_url`, `job_sector`, `job_salary_type`, `job_salary_currency`, `job_salary_min`, `job_salary_max`, `job_career_level`, `job_qualifications`, `job_preferred_sex`, `job_location`, `job_deadline`) 
-VALUES ('$user_id','$job_title','$job_email','$job_short_description','$job_description','$job_tags','$job_experience','$job_type','$job_apply_type','$job_experience_level','$job_external_url','$job_sector','$job_salary_type','$job_salary_currency','$job_salary_min','$job_salary_max','$job_career_level','$job_qualifications','$job_preferred_sex','$job_location','$job_deadline')");
+
+    $insert_job = mysqli_query($conn, "INSERT INTO `job`(`user_id`, `job_title`, `job_email`,`job_short_description`, `job_description`, `job_tags`, `job_experience`, `job_type`, `job_apply_type`, `job_experience_level`, `job_external_url`, `job_sector`, `job_salary_type`, `job_salary_currency`, `job_salary_min`, `job_salary_max`, `job_career_level`, `job_qualifications`, `job_preferred_sex`, `job_location`, `job_deadline`,`job_post_date`) 
+VALUES ('$user_id','$job_title','$job_email','$job_short_description','$job_description','$job_tags','$job_experience','$job_type','$job_apply_type','$job_experience_level','$job_external_url','$job_sector','$job_salary_type','$job_salary_currency','$job_salary_min','$job_salary_max','$job_career_level','$job_qualifications','$job_preferred_sex','$job_location','$job_deadline','$job_post_date')");
     if ($insert_job) {
+
         $msgClass = "alert alert-success";
         $msg = "yes";
         // header("location:my-jobs.php");
+        $last_id = mysqli_insert_id($conn);
+        $insert_view = mysqli_query($conn, "INSERT INTO `views_count`(`job_id`, `views`) VALUES ('$last_id','1')");
     }
 }
 
@@ -72,15 +77,18 @@ VALUES ('$user_id','$job_title','$job_email','$job_short_description','$job_desc
 
 <?php if ($msg == 'yes') : ?>
 
-    <div class="<?php echo $msgClass ?> solid alert-dismissible fade show col-md-8">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
-            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
-            </path>
-        </svg>
-        <strong>Done!</strong> Job Successfully Posted 🌝
-        <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
-        </button>
-    </div>
+<div class="<?php echo $msgClass ?> solid alert-dismissible fade show col-md-8">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+        stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+        <path
+            d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+        </path>
+    </svg>
+    <strong>Done!</strong> Job Successfully Posted 🌝
+    <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i
+                class="mdi mdi-close"></i></span>
+    </button>
+</div>
 
 <?php endif; ?>
 <div class="row">
@@ -93,18 +101,22 @@ VALUES ('$user_id','$job_title','$job_email','$job_short_description','$job_desc
             <div class="card-body">
                 <!-- Post New Job Form -->
                 <form method="post" action="">
+                    <input type="hidden" name="date" value="<?php echo date('Y-m-d H:i:s'); ?>">
                     <div class="form-row">
                         <div class="form-group col-xl-4">
-                            <label class="text-black font-w500 mb-3">Job Title </label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Job Title </label><span
+                                class="text-danger ml-1">*</span>
                             <input type="text" class="form-control" name="job_title" placeholder="Web developer 🚀">
                         </div>
                         <div class="form-group col-xl-4">
-                            <label class="text-black font-w500 mb-3">Your email</label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Your email</label><span
+                                class="text-danger ml-1">*</span>
                             <input type="email" class="form-control" name="job_email" placeholder="info@email.com">
                         </div>
                     </div>
                     <div class="form-group col-xl-8">
-                        <label class="text-black font-w500 mb-3">Description</label><span class="text-danger ml-1">*</span>
+                        <label class="text-black font-w500 mb-3">Description</label><span
+                            class="text-danger ml-1">*</span>
 
                         <textarea class="form-control" name="job_short_description" rows="6">
 What is the job about? Enter the short description of your job.
@@ -113,7 +125,8 @@ What is the job about? Enter the short description of your job.
 													</textarea>
                     </div>
                     <div class="form-group col-xl-8">
-                        <label class="text-black font-w500 mb-3">Description</label><span class="text-danger ml-1">*</span>
+                        <label class="text-black font-w500 mb-3">Description</label><span
+                            class="text-danger ml-1">*</span>
 
                         <textarea class="form-control summernote " name="job_description" rows="13"><h3>Job Description</h3>
 What is the job about? Enter the overall description of your job.
@@ -144,7 +157,7 @@ How candidate can apply for your job. You can leave your contact information to 
                             while ($row = mysqli_fetch_assoc($select_skills)) {
                                 $skill_name = $row['skill_name'];
                             ?>
-                                <option value="<?php echo $skill_name ?>"><?php echo $skill_name ?></option>
+                            <option value="<?php echo $skill_name ?>"><?php echo $skill_name ?></option>
                             <?php
                             }
                             ?>
@@ -157,7 +170,8 @@ How candidate can apply for your job. You can leave your contact information to 
                     </div>
                     <div class="form-row">
                         <div class="form-group col-xl-2">
-                            <label class="text-black font-w500 mb-3">Job Experience</label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Job Experience</label><span
+                                class="text-danger ml-1">*</span>
                             <select class="form-control" name="job_experience">
                                 <option value="0 Years"> 0 Years</option>
                                 <option value="1 Years">1 Years</option>
@@ -170,7 +184,8 @@ How candidate can apply for your job. You can leave your contact information to 
                             </select>
                         </div>
                         <div class="form-group col-xl-3">
-                            <label class="text-black font-w500 mb-3">Job Type</label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Job Type</label><span
+                                class="text-danger ml-1">*</span>
                             <select class="form-control" name="job_type">
                                 <option value="Full Time">Full Time</option>
                                 <option value="Part Time">Part Time
@@ -185,7 +200,8 @@ How candidate can apply for your job. You can leave your contact information to 
                             </select>
                         </div>
                         <div class="form-group col-xl-3">
-                            <label class="text-black font-w500 mb-3">Experience Level</label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Experience Level</label><span
+                                class="text-danger ml-1">*</span>
                             <select class="form-control" name="job_experience_level">
                                 <option value="Junior"> Junior</option>
                                 <option value="Senior"> Senior </option>
@@ -194,7 +210,8 @@ How candidate can apply for your job. You can leave your contact information to 
                         </div>
 
                         <div class="form-group col-xl-3">
-                            <label class="text-black font-w500 mb-3">Job Apply Type</label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Job Apply Type</label><span
+                                class="text-danger ml-1">*</span>
                             <select class="form-control" name="job_apply_type" id="job_apply_type">
                                 <option value="Internal"> Internal</option>
                                 <option value="External URL"> External URL</option>
@@ -210,7 +227,8 @@ How candidate can apply for your job. You can leave your contact information to 
 
                     <div class="form-row">
                         <div class="form-group col-xl-3">
-                            <label class="text-black font-w500 mb-3">Job Sector</label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Job Sector</label><span
+                                class="text-danger ml-1">*</span>
                             <select class="form-control" name="job_sector">
                                 <option value="Web Design">Web Design</option>
                                 <option value="Graphics Design">Graphics Design
@@ -219,7 +237,8 @@ How candidate can apply for your job. You can leave your contact information to 
                             </select>
                         </div>
                         <div class="form-group col-xl-2">
-                            <label class="text-black font-w500 mb-3">Salary Type</label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Salary Type</label><span
+                                class="text-danger ml-1">*</span>
                             <select class="form-control" name="job_salary_type" id="job_salary_type">
                                 <option value="Negotiable">Negotiable</option>
                                 <option value="Monthly">Monthly </option>
@@ -251,7 +270,8 @@ How candidate can apply for your job. You can leave your contact information to 
 
                     <div class="form-row">
                         <div class="form-group col-xl-3">
-                            <label class="text-black font-w500 mb-3">Career Level</label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Career Level</label><span
+                                class="text-danger ml-1">*</span>
                             <select class="form-control" name="job_career_level">
                                 <option value="Manager"> Manager</option>
                                 <option value="Officer"> Officer</option>
@@ -261,7 +281,8 @@ How candidate can apply for your job. You can leave your contact information to 
                             </select>
                         </div>
                         <div class="form-group col-xl-3">
-                            <label class="text-black font-w500 mb-3">Qualifications </label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Qualifications </label><span
+                                class="text-danger ml-1">*</span>
                             <select class="form-control" name="job_qualifications">
                                 <option value="Certificate"> Certificate</option>
                                 <option value="Diploma"> Diploma</option>
@@ -275,7 +296,8 @@ How candidate can apply for your job. You can leave your contact information to 
                             </select>
                         </div>
                         <div class="form-group col-xl-3">
-                            <label class="text-black font-w500 mb-3">Preferred Sex </label><span class="text-danger ml-1">*</span>
+                            <label class="text-black font-w500 mb-3">Preferred Sex </label><span
+                                class="text-danger ml-1">*</span>
                             <select class="form-control" name="job_preferred_sex">
                                 <option value="Male"> Male 👨‍💼</option>
                                 <option value="Female"> Female 👩‍💼</option>
@@ -299,7 +321,8 @@ How candidate can apply for your job. You can leave your contact information to 
                         </div>
                         <div class="form-group col-xl-3">
                             <label for="">Deadline Date</label>
-                            <input name="job_deadline" name="job_deadline" class="form-control" type="date" min="<?php echo date('y/m/d') ?>">
+                            <input name="job_deadline" name="job_deadline" class="form-control" type="date"
+                                min="<?php echo date('y/m/d') ?>">
 
                         </div>
                     </div>
