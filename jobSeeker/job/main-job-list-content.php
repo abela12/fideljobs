@@ -53,6 +53,10 @@
                     $dateObj   = DateTime::createFromFormat('!m', $monthNum);
                     $monthName = $dateObj->format('F'); // March
                     $job_status = $data['job_status'];
+                    $select_view = mysqli_query($conn, "SELECT * FROM `views_count` WHERE `job_id` = '$id'");
+                    while ($filed = mysqli_fetch_assoc($select_view)) {
+                        $view = $filed['views'];
+                    }
                 ?>
                 <div class="jobs card-body margin-top">
                     <div class="card-header border-0  pb-0">
@@ -88,6 +92,15 @@
                             </div>
                             <div class="job-post-item-body d-block d-md-flex">
                                 <p><?php echo $short_description ?></p>
+
+
+
+                            </div>
+                            <div class="job-post-item-body mt-0 d-block d-md-flex">
+                                <p>Posted:<?php echo timePosted($job_post_date) ?> </p>
+                                <p class="ml-auto"> Views <?php echo $view ?> </p>
+
+
 
 
                             </div>
