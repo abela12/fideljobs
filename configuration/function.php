@@ -40,10 +40,13 @@ function timePosted($datetime, $full = false)
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
+
+// check if the user login
 function logged_in()
 {
     return isset($_SESSION['id']);
 }
+
 //this function if session member is not set then it will be redirected to login.php
 function confirm_logged_in()
 {
