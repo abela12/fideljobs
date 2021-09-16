@@ -8,6 +8,7 @@ $errors = array();
 
 //if user signup button
 if (isset($_POST['signup'])) {
+    // FIXME:change to escape function
     $fName = mysqli_real_escape_string($conn, $_POST['fName']);
     $lName = mysqli_real_escape_string($conn, $_POST['lName']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);
