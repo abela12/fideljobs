@@ -18,9 +18,24 @@
                 $allcount = $allcount_fetch['allcount'];
 
                 // Select First 10 Jobs
-                $query = "SELECT * FROM job ORDER BY `job`.`id` DESC limit 0,$rowperpage ";
+                $query = "SELECT * FROM job  ORDER BY `job`.`id` DESC limit 0,$rowperpage ";
+
+
+
+                // if user search jobs
+                if (isset($_GET['search'])) {
+                    $search = escape($_GET['search_name']);
+                    $query = "SELECT * FROM job WHERE `job_title` LIKE '%$search%' ORDER BY `job`.`id` DESC limit 0, $rowperpage ";
+                    $check_num = checkNumRow($query);
+                    if (!$check_num) {
+                        echo  $msg = "<h3 class='text-center'>No jobs found! Modify your search</h3> ";
+                    }
+                }
+
                 $result = mysqli_query($conn, $query);
+
                 // $my_job = mysqli_query($conn, "SELECT * FROM `job` WHERE 1");
+
                 while ($data = mysqli_fetch_assoc($result)) {
                     $id = $data['id'];
                     $user_id = $data['user_id'];
@@ -53,6 +68,34 @@
                     $dateObj   = DateTime::createFromFormat('!m', $monthNum);
                     $monthName = $dateObj->format('F'); // March
                     $job_status = $data['job_status'];
+                    $job_type = $data['job_type'];
+                    $msgClass = "";
+                    if ($job_type == 'Full Time') {
+                        $msgClass = "badge-success";
+                    }
+                    if ($job_type == 'Part Time') {
+                        $msgClass = "badge-danger";
+                    }
+                    if ($job_type == 'Permanent') {
+                        $msgClass = "badge-primary";
+                    }
+                    if ($job_type == 'Remote') {
+                        $msgClass = "badge-warning";
+                    }
+                    if ($job_type == 'Contractual') {
+                        $msgClass = "badge-dark";
+                    }
+                    if ($job_type == 'freelancer') {
+                        $msgClass = "badge-info";
+                    }
+                    if ($job_type == 'Temporary') {
+                        $msgClass = "badge-secondary";
+                    }
+                    if ($job_type == 'Internship') {
+                        $msgClass = "badge-info";
+                    }
+
+
                     $select_view = mysqli_query($conn, "SELECT * FROM `views_count` WHERE `job_id` = '$id'");
                     while ($filed = mysqli_fetch_assoc($select_view)) {
                         $view = $filed['views'];
@@ -74,8 +117,9 @@
                                 </svg>
                             </div>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item text-black" href="javascript:;">Details</a>
-                                <a class="dropdown-item text-black" href="javascript:;">Details</a>
+                                <a class="dropdown-item text-black"
+                                    href="job-details.php?job_id=<?php echo $id ?>">Details</a>
+
                             </div>
                         </div>
                     </div>
@@ -87,7 +131,7 @@
                                 <h2 class="mr-3 text-black h3"><?php echo htmlspecialchars($job_title) ?></h2>
                                 <div class="badge-wrap">
                                     <span
-                                        class="bg-warning  text-white badge  badge-sm py-2 px-3"><?php echo htmlspecialchars($job_type) ?></span>
+                                        class="<?php echo $msgClass ?>  text-white badge  badge-sm py-2 px-3"><?php echo htmlspecialchars($job_type) ?></span>
                                 </div>
                             </div>
                             <div class="job-post-item-body d-block d-md-flex">
