@@ -30,29 +30,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="right-box-padding">
-                                    <div class="toolbar mb-4" role="toolbar">
-                                        <div class="btn-group mb-1">
-                                            <button type="button" class="btn btn-primary light px-3"><i
-                                                    class="fa fa-heart"></i></button>
-                                            <button type="button" class="btn btn-primary light px-3"><i
-                                                    class="fa fa-exclamation-circle"></i></button>
-                                            <button type="button" class="btn btn-primary light px-3"><i
-                                                    class="fa fa-trash"></i></button>
-                                        </div>
 
-
-                                        <div class="btn-group mb-1">
-                                            <button type="button" class="btn btn-primary light dropdown-toggle v"
-                                                data-toggle="dropdown">More <span class="caret m-l-5"></span>
-                                            </button>
-                                            <div class="dropdown-menu"> <a class="dropdown-item"
-                                                    href="javascript: void(0);">saved jobs</a> <a class="dropdown-item"
-                                                    href="javascript: void(0);">report</a>
-
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="read-content">
+
                                         <?php
                                         $jobseeker_Id = $_SESSION['id'];
                                         if (isset($_GET['job_id']) && $_GET['job_id'] != '') {
@@ -65,42 +45,70 @@
                                             $update_views = mysqli_query($conn, "UPDATE `views_count` SET `views`=`views` + 1 WHERE `job_id` = '$job_id'");
                                         }
                                         $my_job = mysqli_query($conn, "SELECT * FROM `job` WHERE `id` ='$job_id'");
-                                        while ($data = mysqli_fetch_assoc($my_job)) {
-                                            $id = $data['id'];
-                                            $user_id = $data['user_id'];
-                                            $job_title = $data['job_title'];
-                                            $job_email = $data['job_email'];
-                                            $job_description = $data['job_description'];
-                                            $job_tags = $data['job_tags'];
-                                            $job_experience = $data['job_experience'];
-                                            $job_type = $data['job_type'];
-                                            $job_apply_type = $data['job_apply_type'];
-                                            $job_experience_level = $data['job_experience_level'];
-                                            $job_external_url = $data['job_external_url'];
-                                            $job_sector = $data['job_sector'];
-                                            $job_salary_type = $data['job_salary_type'];
-                                            $job_salary_currency = $data['job_salary_currency'];
-                                            $job_salary_min = $data['job_salary_min'];
-                                            $job_salary_max = $data['job_salary_max'];
-                                            $job_career_level = $data['job_career_level'];
-                                            $job_qualifications = $data['job_qualifications'];
-                                            $job_preferred_sex = $data['job_preferred_sex'];
-                                            $job_location = $data['job_location'];
-                                            $job_deadline = $data['job_deadline'];
-                                            $job_post_date = $data['job_post_date'];
-                                            list($year, $month, $day) = explode("-", $data['job_deadline']);
-                                            $monthNum  = 3;
-                                            $dateObj   = DateTime::createFromFormat('!m', $monthNum);
-                                            $monthName = $dateObj->format('F'); // March
-                                            $job_status = $data['job_status'];
-                                            $current_date = date("Y-m-d");
-                                            $dateDiff = dateDifference("$current_date", "$job_deadline");
-                                            if ($dateDiff >= 0) {
-                                                $deadline = true;
-                                            } else {
-                                                $deadline = false;
-                                            }
+                                        $my_job_count = "SELECT * FROM `job` WHERE `id` ='$job_id'";
+
+                                        $num_row = checkNumRow($my_job_count);
+                                        if ($num_row) {
+
+
+                                            while ($data = mysqli_fetch_assoc($my_job)) {
+                                                $id = $data['id'];
+                                                $user_id = $data['user_id'];
+                                                $job_title = $data['job_title'];
+                                                $job_email = $data['job_email'];
+                                                $job_description = $data['job_description'];
+                                                $job_tags = $data['job_tags'];
+                                                $job_experience = $data['job_experience'];
+                                                $job_type = $data['job_type'];
+                                                $job_apply_type = $data['job_apply_type'];
+                                                $job_experience_level = $data['job_experience_level'];
+                                                $job_external_url = $data['job_external_url'];
+                                                $job_sector = $data['job_sector'];
+                                                $job_salary_type = $data['job_salary_type'];
+                                                $job_salary_currency = $data['job_salary_currency'];
+                                                $job_salary_min = $data['job_salary_min'];
+                                                $job_salary_max = $data['job_salary_max'];
+                                                $job_career_level = $data['job_career_level'];
+                                                $job_qualifications = $data['job_qualifications'];
+                                                $job_preferred_sex = $data['job_preferred_sex'];
+                                                $job_location = $data['job_location'];
+                                                $job_deadline = $data['job_deadline'];
+                                                $job_post_date = $data['job_post_date'];
+                                                list($year, $month, $day) = explode("-", $data['job_deadline']);
+                                                $monthNum  = 3;
+                                                $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                                                $monthName = $dateObj->format('F'); // March
+                                                $job_status = $data['job_status'];
+                                                $current_date = date("Y-m-d");
+                                                $dateDiff = dateDifference("$current_date", "$job_deadline");
+                                                if ($dateDiff >= 0) {
+                                                    $deadline = true;
+                                                } else {
+                                                    $deadline = false;
+                                                }
                                         ?>
+                                        <div class="toolbar mb-4" role="toolbar">
+                                            <div class="btn-group mb-1">
+                                                <button type="button" class="btn btn-primary light px-3"><i
+                                                        class="fa fa-heart"></i></button>
+                                                <button type="button" class="btn btn-primary light px-3"><i
+                                                        class="fa fa-exclamation-circle"></i></button>
+                                                <button type="button" class="btn btn-primary light px-3"><i
+                                                        class="fa fa-trash"></i></button>
+                                            </div>
+
+
+                                            <div class="btn-group mb-1">
+                                                <button type="button" class="btn btn-primary light dropdown-toggle v"
+                                                    data-toggle="dropdown">More <span class="caret m-l-5"></span>
+                                                </button>
+                                                <div class="dropdown-menu"> <a class="dropdown-item"
+                                                        href="javascript: void(0);">saved jobs</a> <a
+                                                        class="dropdown-item" href="javascript: void(0);">report</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="media pt-3">
                                             <img class="mr-2 rounded" width="50" alt="image"
                                                 src="assets/images/avatar/1.jpg">
@@ -109,11 +117,11 @@
                                                 </h5>
                                                 <p class="mb-0 text-danger">Dead line
                                                     <?php //echo htmlspecialchars($job_deadline) 
-                                                        ?></p>
+                                                            ?></p>
                                                 <p><?php
-                                                        ?></p>
+                                                            ?></p>
                                                 <?php //echo date("Y-m-d") 
-                                                    ?>
+                                                        ?>
                                             </div>
 
 
@@ -160,12 +168,12 @@
                                                     <div class="month"><?php echo htmlspecialchars($year) ?></div>
                                                     <div class="date">
                                                         <?php $monthNum  = $month;
-                                                            $dateObj   = DateTime::createFromFormat('!m', $monthNum);
-                                                            $monthName = $dateObj->format('F'); // March
+                                                                $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                                                                $monthName = $dateObj->format('F'); // March
 
-                                                            ?>
+                                                                ?>
                                                         <?php echo htmlspecialchars($day) . ',' . substr_replace($monthName, "", 3);
-                                                            ?>
+                                                                ?>
                                                     </div>
                                                 </div>
 
@@ -180,13 +188,13 @@
                                             <div class="profile-skills mb-5">
                                                 <h4 class="text-primary mb-2">Skills 💪</h4>
                                                 <?php
-                                                    $skills = explode(',', $job_tags);
-                                                    foreach ($skills as $skill) {
-                                                        echo  '<a href="javascript:void()"
+                                                        $skills = explode(',', $job_tags);
+                                                        foreach ($skills as $skill) {
+                                                            echo  '<a href="javascript:void()"
                                                         class="btn btn-primary light btn-xs mb-1 ml-2">' . $skill . '</a>';
-                                                    }
+                                                        }
 
-                                                    ?>
+                                                        ?>
 
 
 
@@ -372,30 +380,30 @@
 
 
                                         <?php
-                                        }
+                                            }
 
 
-                                        ?>
+                                            ?>
                                     </div>
 
 
                                     <?php
-                                    // Check user already apply job
-                                    $check_apply = mysqli_query($conn, "SELECT * FROM `applicants` WHERE `jobseeker_id` = '$jobseeker_Id' AND `job_id` = '$job_id'");
-                                    $check_apply_num = mysqli_num_rows($check_apply);
+                                            // Check user already apply job
+                                            $check_apply = mysqli_query($conn, "SELECT * FROM `applicants` WHERE `jobseeker_id` = '$jobseeker_Id' AND `job_id` = '$job_id'");
+                                            $check_apply_num = mysqli_num_rows($check_apply);
 
-                                    if ($check_apply_num > 0) {
-                                        echo "<h1>you are already apply pls wait</h1>";
-                                    } else {
+                                            if ($check_apply_num > 0) {
+                                                echo "<h1>you are already apply pls wait</h1>";
+                                            } else {
 
 
-                                        // Check Number of cvs
+                                                // Check Number of cvs
 
-                                        $select_cv = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` ='$jobseeker_Id'");
-                                        $cv_num = mysqli_num_rows($select_cv);
+                                                $select_cv = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` ='$jobseeker_Id'");
+                                                $cv_num = mysqli_num_rows($select_cv);
 
-                                        if ($cv_num > 0 && $job_apply_type == 'Internal' && $deadline) {
-                                            $stat = true;
+                                                if ($cv_num > 0 && $job_apply_type == 'Internal' && $deadline) {
+                                                    $stat = true;
                                     ?>
                                     <div class="text-right">
                                         <button type="button" class="btn btn-primary mb-2" data-toggle="modal"
@@ -403,9 +411,9 @@
 
                                     </div>
                                     <?php
-                                        } else if (!$cv_num > 0 && $job_apply_type == 'Internal') {
-                                            echo "<h1>pls upload ch</h1>";
-                                        } else if ($job_apply_type == 'External URL' && $deadline) {
+                                                } else if (!$cv_num > 0 && $job_apply_type == 'Internal') {
+                                                    echo "<h1>pls upload ch</h1>";
+                                                } else if ($job_apply_type == 'External URL' && $deadline) {
                                         ?>
                                     <div>
                                         <h4>How to apply
@@ -419,15 +427,15 @@
                                                     APPLY</strong> </a></h6>
                                     </div>
                                     <?php
-                                            if ($cv_num > 0) {
-                                                echo "<hr> <br>";
-                                                echo '<div class="text-right">
+                                                    if ($cv_num > 0) {
+                                                        echo "<hr> <br>";
+                                                        echo '<div class="text-right">
                                             <button type="button" class="btn btn-primary mb-2" data-toggle="modal"
                                                 data-target="#applyModal">Apply</button>
     
                                         </div>';
-                                            }
-                                        } else if ($job_apply_type == 'By Email' && $deadline) {
+                                                    }
+                                                } else if ($job_apply_type == 'By Email' && $deadline) {
                                             ?>
                                     <hr>
                                     <div>
@@ -442,13 +450,16 @@
                                         </h6>
                                     </div>
                                     <?php
-                                            // echo "<h1>the job type is by email you can apply bey using this email</h1>";
-                                        } else if (!$deadline) {
-                                            echo "job closed due to dead line";
+                                                    // echo "<h1>the job type is by email you can apply bey using this email</h1>";
+                                                } else if (!$deadline) {
+                                                    echo "job closed due to dead line";
+                                                }
+                                            }
+                                        } else {
+                                            echo "<h1>no result</h1>";
                                         }
-                                    }
 
-                                    ?>
+                                ?>
 
 
                                 </div>
