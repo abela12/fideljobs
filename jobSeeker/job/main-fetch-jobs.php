@@ -5,7 +5,9 @@ include '../../database/database.php';
 
 $row = $_POST['row'];
 $rowperpage = 3;
-
+if (isset($_GET['search'])) {
+    $query = 'SELECT * FROM job  WHERE `job_title` LIKE "%web developer%" limit ' . $row . ',' . $rowperpage;
+}
 // Selecting Jobs
 $query = 'SELECT * FROM job limit ' . $row . ',' . $rowperpage;
 $result = mysqli_query($conn, $query);
@@ -60,7 +62,7 @@ while ($data = mysqli_fetch_assoc($result)) {
 </svg>';
     $html .= '</div>';
     $html .= '<div class="dropdown-menu dropdown-menu-right">';
-    $html .= '<a class="dropdown-item text-black" href="javascript:;">Details</a>';
+    $html .= '<a class="dropdown-item text-black"  href="job-details.php?job_id=' . $id . '">Details</a>';
     $html .= '<a class="dropdown-item text-black" href="javascript:;">Details</a>';
     $html .= '</div>';
     $html .= '</div>';
@@ -70,11 +72,11 @@ while ($data = mysqli_fetch_assoc($result)) {
     $html .= '<div class="job-post-item-header d-flex align-items-center">';
     $html .= '<h2 class="mr-3 text-black h3">' . $job_title . '</h2>';
     $html .= '<div class="badge-wrap">';
-    $html .= ' <span
-        class="bg-warning  text-white badge  badge-sm py-2 px-3">' . $job_type . '</span>';
+    $html .= '<span class="bg-warning  text-white badge  badge-sm py-2 px-3">' . $job_type . '</span>';
+
     $html .= '</div>';
     $html .= '</div>';
-    $html .= '<div class="job-post-item-body d-block d-md-flex">';
+    $html .= '<div class="job-post-item-body d-blockk d-md-flexn">';
     $html .= '<p>.' . $short_description . '</p>';
     $html .= '</div>';
     $html .= '</div>';
