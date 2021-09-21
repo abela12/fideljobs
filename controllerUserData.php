@@ -213,6 +213,10 @@ if (isset($_POST['check'])) {
         $email = $fetch_data['email'];
         $username = $fetch_data['username'];
         $jobseekerID = $fetch_data['id'];
+        $fName = $fetch_data['fName'];
+        $lName = $fetch_data['lName'];
+
+
         $role_id = $fetch_data['role_id'];
         $code = 0;
         $status = 'verified';
@@ -223,6 +227,9 @@ if (isset($_POST['check'])) {
             $_SESSION['email'] = $email;
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $jobseekerID;
+            $_SESSION['fName'] = $fName;
+            $_SESSION['lName'] = $lName;
+
             $_SESSION['role_id'] = $role_id;
 
 
@@ -262,6 +269,8 @@ if (isset($_POST['login'])) {
                     $_SESSION['id'] = $fetch['id'];
                     $_SESSION['username'] = $fetch['username'];
                     $_SESSION['role_id'] = $fetch['role_id'];
+                    $_SESSION['fName'] =  $fetch['fName'];
+                    $_SESSION['lName'] =  $fetch['lName'];
                     $role_id = $fetch['role_id'];
                     if ($role_id == 2) {
                         header('location: jobSeeker/index.php');
