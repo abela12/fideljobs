@@ -87,28 +87,7 @@
                                                     $deadline = false;
                                                 }
                                         ?>
-                                        <div class="toolbar mb-4" role="toolbar">
-                                            <div class="btn-group mb-1">
-                                                <button type="button" class="btn btn-primary light px-3"><i
-                                                        class="fa fa-heart"></i></button>
-                                                <button type="button" class="btn btn-primary light px-3"><i
-                                                        class="fa fa-exclamation-circle"></i></button>
-                                                <button type="button" class="btn btn-primary light px-3"><i
-                                                        class="fa fa-trash"></i></button>
-                                            </div>
 
-
-                                            <div class="btn-group mb-1">
-                                                <button type="button" class="btn btn-primary light dropdown-toggle v"
-                                                    data-toggle="dropdown">More <span class="caret m-l-5"></span>
-                                                </button>
-                                                <div class="dropdown-menu"> <a class="dropdown-item"
-                                                        href="javascript: void(0);">saved jobs</a> <a
-                                                        class="dropdown-item" href="javascript: void(0);">report</a>
-
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="media pt-3">
                                             <img class="mr-2 rounded" width="50" alt="image"
                                                 src="assets/images/avatar/1.jpg">
@@ -399,7 +378,7 @@
 
                                                 // Check Number of cvs
 
-                                                $select_cv = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` ='$jobseeker_Id'");
+                                                $select_cv = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` ='$jobseeker_Id' AND `status`='active'");
                                                 $cv_num = mysqli_num_rows($select_cv);
 
                                                 if ($cv_num > 0 && $job_apply_type == 'Internal' && $deadline) {
@@ -412,7 +391,7 @@
                                     </div>
                                     <?php
                                                 } else if (!$cv_num > 0 && $job_apply_type == 'Internal') {
-                                                    echo "<h1>pls upload ch</h1>";
+                                                    echo "<h1>pls upload CV</h1>";
                                                 } else if ($job_apply_type == 'External URL' && $deadline) {
                                         ?>
                                     <div>
