@@ -38,23 +38,9 @@ if (isset($_GET['id']) && $_GET['id'] != '' && isset($_GET['action']) && $_GET['
         while ($row = mysqli_fetch_assoc($check_file)) {
             $file_path = $row['file_path'];
         }
-        if (!unlink($file_path)) {
-            echo ("file_pointer cannot be deleted due to an error");
-        ?>
-<script>
-alert("file_pointer cannot be deleted due to an error")
-</script>
-<?php
-        } else {
-            echo ("file_pointer has been deleted");
-        ?>
-<script>
-alert("file_pointer has been deleted")
-</script>
-<?php
-        }
-        // FIXME: data not deleted
-        $delete_cvs =  mysqli_query($conn, "DELETE FROM `jobseeker_attachment_file` WHERE `id` = '$jobId' AND `jobseeker_id` = '$jobseekerId' ");
+
+        // TODO: Fixed data not deleted
+        $delete_cvs =  mysqli_query($conn, "UPDATE `jobseeker_attachment_file` SET `status`='deleted' WHERE `id` = '$jobId' AND `jobseeker_id` = '$jobseekerId' ");
     }
 }
 
@@ -78,7 +64,7 @@ alert("file_pointer has been deleted")
                 <tbody>
                     <?php
                     $jobseekerId = $_SESSION['id'];
-                    $select_cvs = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` = '$jobseekerId'");
+                    $select_cvs = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` = '$jobseekerId' AND `status` = 'active'");
                     $cvs_num_row = mysqli_num_rows($select_cvs);
                     if ($cvs_num_row > 0) {
 
@@ -124,7 +110,7 @@ alert("file_pointer has been deleted")
     </div>
     <div class="card-title">Manage CV'S</div>
     <?php
-    $select_cvs = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` = '$jobseekerId'");
+    $select_cvs = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` = '$jobseekerId' AND `status`='active'");
     $cvs_num_row = mysqli_num_rows($select_cvs);
     if ($cvs_num_row >= 3) {
         echo "you are already submit 3 cvs";
