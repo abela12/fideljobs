@@ -131,7 +131,7 @@ $(document).on("click", ".btn_remove_certificate", function () {
 
 $("#addCertificate").on("click", function () {
   var formdata = $("#add-certificate").serialize();
-  console.log(formdata);
+
   $.ajax({
     url: "action/addCertificate.php",
     type: "POST",
