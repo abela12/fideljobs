@@ -1,69 +1,4 @@
-<?php
-//check bio num row  🏡
-$check_bio_num = mysqli_query($conn, "SELECT * FROM `jobseekerbio` WHERE `jobseeker_id`='$jobseeker_id'");
-$check_bio_num = mysqli_num_rows($check_bio_num);
-
-//check address num row 👱
-$check_address_num = mysqli_query($conn, "SELECT * FROM `address` WHERE `jobseeker_id` ='$jobseeker_id'");
-$check_address_num = mysqli_num_rows($check_address_num);
-
-// check skill num 🏃
-$check_skill_row = mysqli_query($conn, "SELECT * FROM `jobseeker_skill` WHERE `jobseeker_id` = '$jobseeker_id'");
-$check_skill_row = mysqli_num_rows($check_skill_row);
-
-// check work availability status num 👱
-$check_work_availability = mysqli_query($conn, "SELECT * FROM `jobseeker_work_status` WHERE `jobseeker_id` = '$jobseeker_id'");
-$check_work_availability = mysqli_num_rows($check_work_availability);
-
-
-
-
-
-// Select Job seeker bio ⏰
-$select_bio = "SELECT * FROM `jobseekerbio` WHERE `jobseeker_id`='$jobseeker_id'";
-$bio_result = fetchData($select_bio);
-
-
-
-
-
-
-// $check_num_row_bio = checkNumRow($bio_result);
-while ($bio_data = mysqli_fetch_assoc($bio_result)) {
-    $Title = $bio_data['Title'];
-    $aboutYourSelf = $bio_data['aboutYourSelf'];
-    $Sex = $bio_data['Sex'];
-    $dateOfBirth = $bio_data['dateOfBirth'];
-}
-// Select Job Seeker Skill
-$skill_name = "";
-$select_skill = "SELECT * FROM `jobseeker_skill` WHERE `jobseeker_id` = '$jobseeker_id'";
-$skill_result = fetchData($select_skill);
-while ($skill_data = mysqli_fetch_assoc($skill_result)) {
-    $skill_name = $skill_data['skill_name'];
-    $skill_name = explode(",", $skill_name);
-}
-
-//Select Address
-$select_address = "SELECT * FROM `address` WHERE `jobseeker_id` = '$jobseeker_id'";
-$address_result = fetchData($select_address);
-while ($address_date = mysqli_fetch_assoc($address_result)) {
-    $country = $address_date['country'];
-    $city = $address_date['city'];
-    $phoneNumber = $address_date['phoneNumber'];
-}
-
-// Select Work Availability
-$select_work_availability = mysqli_query($conn, "SELECT * FROM `jobseeker_work_status` WHERE `jobseeker_id` = '$jobseeker_id'");
-
-while ($work_availability_data = mysqli_fetch_assoc($select_work_availability)) {
-    $work_availability = $work_availability_data['work_availability'];
-    $job_type =          $work_availability_data['job_type'];
-}
-
-
-
-?>
+<?php include 'action/jobSeekerProfile.php' ?>
 
 <div class="profile-about-me">
     <div class="pt-4 border-bottom-1 pb-3">
@@ -72,7 +7,7 @@ while ($work_availability_data = mysqli_fetch_assoc($select_work_availability)) 
         if ($check_bio_num > 0) {
 
         ?>
-        <p class="mb-2"><?php echo $aboutYourSelf ?></p>
+            <p class="mb-2"><?php echo $aboutYourSelf ?></p>
         <?php
         }
         ?>
@@ -91,8 +26,8 @@ while ($work_availability_data = mysqli_fetch_assoc($select_work_availability)) 
         foreach ($skill_name as $skill) {
     ?>
 
-    <a href="javascript:void()" class="btn btn-primary light btn-xs mb-1"><?php echo $skill ?></a>
-    </h4>
+            <a href="javascript:void()" class="btn btn-primary light btn-xs mb-1"><?php echo $skill ?></a>
+            </h4>
     <?php
         }
     }
@@ -108,8 +43,8 @@ while ($work_availability_data = mysqli_fetch_assoc($select_work_availability)) 
     while ($language_data = mysqli_fetch_assoc($language_result)) {
         $languageName = $language_data['languageName'];
     ?>
-    <a href="javascript:void()" class="text-muted pr-3 f-s-16"><i class="flag-icon flag-icon-us"></i>
-        <?php echo $languageName ?></a>
+        <a href="javascript:void()" class="text-muted pr-3 f-s-16"><i class="flag-icon flag-icon-us"></i>
+            <?php echo $languageName ?></a>
     <?php
     }
 
@@ -139,20 +74,20 @@ while ($work_availability_data = mysqli_fetch_assoc($select_work_availability)) 
     <?php
     if ($check_work_availability > 0) {
     ?>
-    <div class="row mb-2">
-        <div class="col-3">
-            <h5 class="f-w-500">Availability <span class="pull-right">:</span></h5>
+        <div class="row mb-2">
+            <div class="col-3">
+                <h5 class="f-w-500">Availability <span class="pull-right">:</span></h5>
+            </div>
+            <div class="col-9"><span><?php echo $work_availability ?></span>
+            </div>
         </div>
-        <div class="col-9"><span><?php echo $work_availability ?></span>
+        <div class="row mb-2">
+            <div class="col-3">
+                <h5 class="f-w-500">Job Type <span class="pull-right">:</span></h5>
+            </div>
+            <div class="col-9"><span><?php echo $job_type ?></span>
+            </div>
         </div>
-    </div>
-    <div class="row mb-2">
-        <div class="col-3">
-            <h5 class="f-w-500">Job Type <span class="pull-right">:</span></h5>
-        </div>
-        <div class="col-9"><span><?php echo $job_type ?></span>
-        </div>
-    </div>
 
     <?php
     }
@@ -172,20 +107,20 @@ while ($work_availability_data = mysqli_fetch_assoc($select_work_availability)) 
     <?php
     if ($check_address_num > 0) {
     ?>
-    <div class="row mb-2">
-        <div class="col-3">
-            <h5 class="f-w-500">Location <span class="pull-right">:</span></h5>
+        <div class="row mb-2">
+            <div class="col-3">
+                <h5 class="f-w-500">Location <span class="pull-right">:</span></h5>
+            </div>
+            <div class="col-9"><span><?php echo $country . ' ,' . $city ?></span>
+            </div>
         </div>
-        <div class="col-9"><span><?php echo $country . ' ,' . $city ?></span>
+        <div class="row mb-2">
+            <div class="col-3">
+                <h5 class="f-w-500">Phone Number <span class="pull-right">:</span></h5>
+            </div>
+            <div class="col-9"><span><?php echo $phoneNumber ?></span>
+            </div>
         </div>
-    </div>
-    <div class="row mb-2">
-        <div class="col-3">
-            <h5 class="f-w-500">Phone Number <span class="pull-right">:</span></h5>
-        </div>
-        <div class="col-9"><span><?php echo $phoneNumber ?></span>
-        </div>
-    </div>
 
     <?php
     }
