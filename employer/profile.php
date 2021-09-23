@@ -4,10 +4,14 @@
 <head>
     <?php include 'include/header.php' ?>
     <?php include '../include/session.php' ?>
+    <?php
+    $msg = "";
+    ?>
 
 
 
 </head>
+<?php include 'action/profile_action.php' ?>
 
 <body>
 
@@ -55,18 +59,20 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
+        <!-- *************************** 
+          Modal Content
+      ********************************-->
 
         <!--**********************************
+        <?php include 'modal/add-company-profile-modal.php' ?>
+
             Content body start
         ***********************************-->
         <?php include 'profile/view_profile_content.php' ?>
         <!--**********************************
             Content body end
         ***********************************-->
-        <!-- *************************** 
-          Modal Content
-      ********************************-->
-        <?php include 'modal/add-company-profile-modal.php' ?>
+
 
         <!--**********************************
             Footer start
