@@ -76,17 +76,10 @@
                     </div>
                 </div>
                 <div class="row">
+                    <?php include 'action/jobSeekerProfile.php' ?>
+                    <?php include 'profile/job_seeker_profile_content.php' ?>
 
-                    <div class="col-xl-4">
-                        <div class="card">
 
-                        </div>
-                    </div>
-                    <div class="col-xl-8">
-                        <div class="card">
-                            <div class="card-title m-auto p-auto">Profile</div>
-                        </div>
-                    </div>
                 </div>
                 <?php include 'include/profile-modal.php'
                 ?>
