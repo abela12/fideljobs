@@ -15,15 +15,33 @@
                         <div class="form-group col-md-8">
                             <label for="schoolName">School Name</label>
                             <input type="text" name="schoolName" placeholder="St mary university" id="schoolName"
-                                class="form-control">
+                                class="form-control" required>
                         </div>
 
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-8">
-                            <label for="fieldOfStudy">Field Of Study</label>
-                            <input type="text" name="fieldOfStudy" id="fieldOfStudy" placeholder=""
-                                class="form-control">
+                            <div class="mb-4">
+                                <label>Tell us about your education status</label>
+                                <p>What did you study?</p>
+                            </div>
+
+                            <select id="single-select" name="fieldOfStudy">
+                                <option value="">select</option>
+                                <?php
+                                $select_field_of_study = "SELECT * FROM `field_of_study`";
+                                $field_result = fetchData($select_field_of_study);
+                                while ($filed_data = mysqli_fetch_assoc($field_result)) {
+                                    $name = $filed_data['name'];
+                                ?>
+                                <option value="<?php echo $name ?>"><?php echo $name ?></option>
+
+                                <?php
+                                }
+
+                                ?>
+                            </select>
+
                         </div>
 
                     </div>
