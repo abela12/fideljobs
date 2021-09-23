@@ -22,7 +22,7 @@
                                 <div class="form-group">
 
 
-                                    <td><input type="text" class="form-control" name="certificateLink[]"
+                                    <td><input type="url" class="form-control" name="certificateLink[]"
                                             placeholder="certificate link" class="form-control name_list" required />
                                     </td>
 
