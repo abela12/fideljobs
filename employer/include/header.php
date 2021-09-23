@@ -143,6 +143,7 @@ abbr[data-title]:focus::after {
 </style>
 
 <?php
+$employer_id = $_SESSION['id'];
 //login confirmation
 // confirm_logged_in();
 
