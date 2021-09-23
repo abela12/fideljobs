@@ -9,8 +9,8 @@ if (isset($_POST['addEducation'])) {
         $shoolName = $_POST['shoolName'];
         $type = $_POST['type'];
         $description = $_POST['schoolDescription'];
-        $insertEducation = mysqli_query($conn, "INSERT INTO `jobseekereducation`(`jobseeker_id`, `shoolName`, `type`, `description`) 
-        VALUES ('$jobseeker_id','$shoolName','type','description')");
+        $insertEducation = mysqli_query($conn, "INSERT INTO `jobseekereducation`(`jobseeker_id`, `schoolName`, `type`, `description`) 
+        VALUES ('$jobseeker_id','$shoolName','$type','$description')");
     }
 }
 //Add Highest Education
