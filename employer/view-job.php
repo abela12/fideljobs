@@ -3,6 +3,7 @@
 
 <head>
     <?php include 'include/header.php';
+
     $msg = "";
     $job_id = intval($_GET['id']);
     if (isset($_GET['action']) and $_GET['action'] == 'Closed') {

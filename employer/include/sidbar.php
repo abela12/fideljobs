@@ -18,8 +18,8 @@
                 <ul aria-expanded="false">
                     <li><a href="profile.php">Profile</a></li>
 
-                    <li><a href="update-profile.php">Update profile</a></li>
-                    <li><a href="company-profile.php">Company Profile</a></li>
+
+
 
 
                 </ul>
