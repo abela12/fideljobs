@@ -3,6 +3,7 @@
 
 <head>
     <?php include 'include/header.php';
+
     $msgClass = "alert alert-secondary";
     $msg = "";
 
