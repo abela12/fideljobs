@@ -41,6 +41,12 @@
                             <span class="nk-menu-text">Send Notification</span>
                         </a>
                     </li><!-- .nk-menu-item -->
+                    <li class="nk-menu-item">
+                        <a href="systemadministrator/generate_report.php" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-contact"></em></span>
+                            <span class="nk-menu-text">Generate Report</span>
+                        </a>
+                    </li><!-- .nk-menu-item -->
 
                     <li class="nk-menu-item">
                         <a href="systemadministrator/view_profile.php" class="nk-menu-link">
