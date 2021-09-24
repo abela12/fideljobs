@@ -86,17 +86,32 @@
                                                 } else {
                                                     $deadline = false;
                                                 }
+                                                // Job Company Name
+                                                $fetch_company_profile = mysqli_query($conn, "SELECT * FROM `company_profile` WHERE `user_id` = '$user_id'");
+                                                $company_profile_result = mysqli_num_rows($fetch_company_profile);
+                                                if ($company_profile_result > 0) {
+                                                    while ($company_data = mysqli_fetch_assoc($fetch_company_profile)) {
+                                                        $company_name = $company_data['company_name'];
+                                                        $company_short_description = $company_data['company_short_description'];
+                                                        $company_description = $company_data['company_description'];
+                                                        $company_location = $company_data['company_location'];
+                                                    }
+                                                }
                                         ?>
 
                                         <div class="media pt-3">
                                             <img class="mr-2 rounded" width="50" alt="image"
                                                 src="assets/images/avatar/1.jpg">
                                             <div class="media-body mr-2">
-                                                <h5 class="text-primary mb-0 mt-1">Job by Dashen Bank S.C
+                                                <h5 class="text-primary mb-0 mt-1">Job by
+                                                    <?php echo isset($company_name) ? $company_name : '' ?>
                                                 </h5>
                                                 <p class="mb-0 text-danger">Dead line
-                                                    <?php //echo htmlspecialchars($job_deadline) 
-                                                            ?></p>
+                                                    <?php echo htmlspecialchars($job_deadline) ?>
+                                                    <strong
+                                                        class="text-primary"><?php echo '(' . $dateDiff . ' days left)' ?></strong>
+                                                </p>
+                                                </p>
                                                 <p><?php
                                                             ?></p>
                                                 <?php //echo date("Y-m-d") 
@@ -107,7 +122,7 @@
                                         </div>
                                         <hr>
                                         <div class="media mb-2 mt-3">
-                                            <div class="media-body"><span class="pull-right">07:23 AM</span>
+                                            <div class="media-body"><span class="pull-right">fidel jobs</span>
                                                 <h5 class="my-1 text-primary"><?php echo htmlspecialchars($job_title) ?>
                                                 </h5>
                                                 <p class="read-content-email">

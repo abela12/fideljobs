@@ -75,47 +75,51 @@
                             $rowperpage = 3;
 
                             // counting total number of posts
-                            $allcount_query = "SELECT count(*) as allcount FROM job";
+                            $allcount_query = "SELECT count(*) as allcount FROM job WHERE job_type LIKE '%Part Time%' AND job_sector LIKE '%s%' AND job_tags LIKE '%s%' AND job_preferred_sex LIKE '%s%'";
                             $allcount_result = mysqli_query($conn, $allcount_query);
                             $allcount_fetch = mysqli_fetch_array($allcount_result);
                             $allcount = $allcount_fetch['allcount'];
 
                             // select first 5 posts
-                            $query = "select * from job order by id asc limit 0,$rowperpage ";
-                            $result = mysqli_query($conn, $query);
-                            // $my_job = mysqli_query($conn, "SELECT * FROM `job` WHERE 1");
-                            while ($data = mysqli_fetch_assoc($result)) {
-                                $id = $data['id'];
-                                $user_id = $data['user_id'];
-                                $job_title = $data['job_title'];
-                                $job_email = $data['job_email'];
-                                $job_description = $data['job_description'];
-                                $job_short_description = $data['job_short_description'];
+                            // $query = ;
+                            $result = mysqli_query($conn, "SELECT * FROM job  WHERE
+                             job_type LIKE '%$job_type%'
+                               OR (job_tags LIKE '%$skill_name_one%') AND job_preferred_sex LIKE '%$Sex%' order by id asc limit 0,25");
+                            $check_num_row = mysqli_num_rows($result);
+                            if ($check_num_row > 0) {
+                                // $my_job = mysqli_query($conn, "SELECT * FROM `job` WHERE 1");
+                                while ($data = mysqli_fetch_assoc($result)) {
+                                    $id = $data['id'];
+                                    $user_id = $data['user_id'];
+                                    $job_title = $data['job_title'];
+                                    $job_email = $data['job_email'];
+                                    $job_description = $data['job_description'];
+                                    $job_short_description = $data['job_short_description'];
 
-                                $short_description = substr($job_short_description, 0, 160) . "...";
+                                    $short_description = substr($job_short_description, 0, 160) . "...";
 
-                                $job_tags = $data['job_tags'];
-                                $job_experience = $data['job_experience'];
-                                $job_type = $data['job_type'];
-                                $job_apply_type = $data['job_apply_type'];
-                                $job_experience_level = $data['job_experience_level'];
-                                $job_external_url = $data['job_external_url'];
-                                $job_sector = $data['job_sector'];
-                                $job_salary_type = $data['job_salary_type'];
-                                $job_salary_currency = $data['job_salary_currency'];
-                                $job_salary_min = $data['job_salary_min'];
-                                $job_salary_max = $data['job_salary_max'];
-                                $job_career_level = $data['job_career_level'];
-                                $job_qualifications = $data['job_qualifications'];
-                                $job_preferred_sex = $data['job_preferred_sex'];
-                                $job_location = $data['job_location'];
-                                $job_deadline = $data['job_deadline'];
-                                $job_post_date = $data['job_post_date'];
-                                list($year, $month, $day) = explode("-", $data['job_deadline']);
-                                $monthNum  = 3;
-                                $dateObj   = DateTime::createFromFormat('!m', $monthNum);
-                                $monthName = $dateObj->format('F'); // March
-                                $job_status = $data['job_status'];
+                                    $job_tags = $data['job_tags'];
+                                    $job_experience = $data['job_experience'];
+                                    $job_type = $data['job_type'];
+                                    $job_apply_type = $data['job_apply_type'];
+                                    $job_experience_level = $data['job_experience_level'];
+                                    $job_external_url = $data['job_external_url'];
+                                    $job_sector = $data['job_sector'];
+                                    $job_salary_type = $data['job_salary_type'];
+                                    $job_salary_currency = $data['job_salary_currency'];
+                                    $job_salary_min = $data['job_salary_min'];
+                                    $job_salary_max = $data['job_salary_max'];
+                                    $job_career_level = $data['job_career_level'];
+                                    $job_qualifications = $data['job_qualifications'];
+                                    $job_preferred_sex = $data['job_preferred_sex'];
+                                    $job_location = $data['job_location'];
+                                    $job_deadline = $data['job_deadline'];
+                                    $job_post_date = $data['job_post_date'];
+                                    list($year, $month, $day) = explode("-", $data['job_deadline']);
+                                    $monthNum  = 3;
+                                    $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                                    $monthName = $dateObj->format('F'); // March
+                                    $job_status = $data['job_status'];
                             ?>
                             <div class="jobs card-body margin-top">
                                 <div class="card-header border-0  pb-0">
@@ -166,7 +170,8 @@
                                 </div>
 
                             </div>
-                            <?php } ?>
+                            <?php }
+                            } ?>
 
 
 
