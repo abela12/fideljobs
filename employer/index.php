@@ -83,11 +83,11 @@
                         </a>
                     </div>
                 </div>
-                <div class="row">
-                    <input name="somedate" type="date" min="<?php echo date('y/m/d') ?>">
+                <div class="row" id="printableArea">
 
 
-                    <?php //include 'include/job-count.php' 
+
+                    <?php include 'statics/statics-content.php'
                     ?>
 
                 </div>
