@@ -1,7 +1,7 @@
 <div class="nk-footer">
     <div class="container-fluid">
         <div class="nk-footer-wrap">
-            <div class="nk-footer-copyright"> &copy; 2021 Kebel Management System
+            <div class="nk-footer-copyright"> &copy; 2021 Fidel Job Portal System
             </div>
             <div class="nk-footer-links">
                 <ul class="nav nav-sm">
