@@ -79,56 +79,56 @@ $dataPoints1 = array(
                             </div>
                             <div class="card card-preview">
                                 <script>
-                                window.onload = function() {
+                                    window.onload = function() {
 
 
-                                    var chart = new CanvasJS.Chart("chartContainer", {
-                                        theme: "light2",
-                                        animationEnabled: true,
-                                        exportEnabled: true,
-                                        title: {
-                                            text: "Fidel Job Portal Total Users= <?php echo   $count_all ?>  "
+                                        var chart = new CanvasJS.Chart("chartContainer", {
+                                            theme: "light2",
+                                            animationEnabled: true,
+                                            exportEnabled: true,
+                                            title: {
+                                                text: "Fidel Job Portal Total Users= <?php echo   $count_all ?>  "
 
-                                        },
-                                        data: [{
-                                            type: "pie",
-                                            indexLabel: "{y}",
-                                            yValueFormatString: "#,##0.00\"%\"",
-                                            indexLabelPlacement: "inside",
-                                            indexLabelFontColor: "#36454F",
-                                            indexLabelFontSize: 18,
-                                            indexLabelFontWeight: "bolder",
-                                            showInLegend: true,
-                                            legendText: "{label}",
-                                            dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                                        }]
-                                    });
-                                    chart.render();
+                                            },
+                                            data: [{
+                                                type: "pie",
+                                                indexLabel: "{y}",
+                                                yValueFormatString: "#,##0.00\"%\"",
+                                                indexLabelPlacement: "inside",
+                                                indexLabelFontColor: "#36454F",
+                                                indexLabelFontSize: 18,
+                                                indexLabelFontWeight: "bolder",
+                                                showInLegend: true,
+                                                legendText: "{label}",
+                                                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                                            }]
+                                        });
+                                        chart.render();
 
-                                    var chart1 = new CanvasJS.Chart("chartContainer1", {
-                                        theme: "light2",
-                                        animationEnabled: true,
-                                        exportEnabled: true,
-                                        title: {
-                                            text: "Fidel Job Portal Total Jobs= <?php echo   $count_all ?>  "
+                                        var chart1 = new CanvasJS.Chart("chartContainer1", {
+                                            theme: "light2",
+                                            animationEnabled: true,
+                                            exportEnabled: true,
+                                            title: {
+                                                text: "Fidel Job Portal Total Jobs= <?php echo   $count_all_job ?>  "
 
-                                        },
-                                        data: [{
-                                            type: "pie",
-                                            indexLabel: "{y}",
-                                            yValueFormatString: "#,##0.00\"%\"",
-                                            indexLabelPlacement: "inside",
-                                            indexLabelFontColor: "#36454F",
-                                            indexLabelFontSize: 18,
-                                            indexLabelFontWeight: "bolder",
-                                            showInLegend: true,
-                                            legendText: "{label}",
-                                            dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
-                                        }]
-                                    });
-                                    chart1.render();
+                                            },
+                                            data: [{
+                                                type: "pie",
+                                                indexLabel: "{y}",
+                                                yValueFormatString: "#,##0.00\"%\"",
+                                                indexLabelPlacement: "inside",
+                                                indexLabelFontColor: "#36454F",
+                                                indexLabelFontSize: 18,
+                                                indexLabelFontWeight: "bolder",
+                                                showInLegend: true,
+                                                legendText: "{label}",
+                                                dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
+                                            }]
+                                        });
+                                        chart1.render();
 
-                                }
+                                    }
                                 </script>
                                 <div id="chartContainer" style="height: 370px; width: 100%;">
 
