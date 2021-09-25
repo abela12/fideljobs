@@ -31,7 +31,7 @@ if (isset($_POST['register'])) {
 
 
                         <div class="images">
-                            <!-- <img src="assets/images/register-login.png" alt="Register Login"> -->
+                            <img src="assets/images/brand/mockup1.jpg" alt="Register Login">
                         </div>
                     </div>
                     <!-- Register & Login Images End -->
