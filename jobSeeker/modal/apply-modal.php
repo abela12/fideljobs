@@ -29,7 +29,7 @@
                         <select class="form-control" name="attachment_file_id" id="cv">
                             <?php
                             $jobseekerId = $_SESSION['id'];
-                            $select_cvs = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` = '$jobseekerId'");
+                            $select_cvs = mysqli_query($conn, "SELECT * FROM `jobseeker_attachment_file` WHERE `jobseeker_id` = '$jobseekerId' AND `status` = 'active'");
                             $cvs_num_row = mysqli_num_rows($select_cvs);
                             if ($cvs_num_row > 0) {
                                 while ($row = mysqli_fetch_assoc($select_cvs)) {
