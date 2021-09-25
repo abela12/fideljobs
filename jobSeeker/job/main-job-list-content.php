@@ -25,7 +25,7 @@
                 // if user search jobs
                 if (isset($_GET['search'])) {
                     $search = escape($_GET['search_name']);
-                    $query = "SELECT * FROM job WHERE `job_title` LIKE '%$search%' ORDER BY `job`.`id` DESC limit 0, $rowperpage ";
+                    $query = "SELECT * FROM job WHERE `job_title` LIKE '%$search%' ORDER BY `job`.`id` DESC";
                     $check_num = checkNumRow($query);
                     if (!$check_num) {
                         echo  $msg = "<h3 class='text-center'>No jobs found! Modify your search</h3> ";
@@ -101,63 +101,59 @@
                         $view = $filed['views'];
                     }
                 ?>
-                <div class="jobs card-body margin-top">
-                    <div class="card-header border-0  pb-0">
-                        <h3 class="fs-20 text-black mb-0"></h3>
-                        <div class="dropdown ml-auto">
-                            <div class="btn-link" data-toggle="dropdown">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24"></rect>
-                                        <circle fill="#000000" cx="12" cy="5" r="2"></circle>
-                                        <circle fill="#000000" cx="12" cy="12" r="2"></circle>
-                                        <circle fill="#000000" cx="12" cy="19" r="2"></circle>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item text-black"
-                                    href="job-details.php?job_id=<?php echo $id ?>">Details</a>
+                    <div class="jobs card-body margin-top">
+                        <div class="card-header border-0  pb-0">
+                            <h3 class="fs-20 text-black mb-0"></h3>
+                            <div class="dropdown ml-auto">
+                                <div class="btn-link" data-toggle="dropdown">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <circle fill="#000000" cx="12" cy="5" r="2"></circle>
+                                            <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                            <circle fill="#000000" cx="12" cy="19" r="2"></circle>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item text-black" href="job-details.php?job_id=<?php echo $id ?>">Details</a>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
-
-
-                        <div class="mb-4 mb-md-0 mr-5">
-                            <div class="job-post-item-header d-flex align-items-center">
-                                <h2 class="mr-3 text-black h3"><?php echo htmlspecialchars($job_title) ?></h2>
-                                <div class="badge-wrap">
-                                    <span
-                                        class="<?php echo $msgClass ?>  text-white badge  badge-sm py-2 px-3"><?php echo htmlspecialchars($job_type) ?></span>
                                 </div>
                             </div>
-                            <div class="job-post-item-body d-block d-md-flex">
-                                <p><?php echo $short_description ?></p>
+                        </div>
+                        <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+
+                            <div class="mb-4 mb-md-0 mr-5">
+                                <div class="job-post-item-header d-flex align-items-center">
+                                    <h2 class="mr-3 text-black h3"><?php echo htmlspecialchars($job_title) ?></h2>
+                                    <div class="badge-wrap">
+                                        <span class="<?php echo $msgClass ?>  text-white badge  badge-sm py-2 px-3"><?php echo htmlspecialchars($job_type) ?></span>
+                                    </div>
+                                </div>
+                                <div class="job-post-item-body d-block d-md-flex">
+                                    <p><?php echo $short_description ?></p>
 
 
 
+                                </div>
+                                <div class="job-post-item-body mt-0 d-block d-md-flex">
+                                    <p>Posted:<?php echo timePosted($job_post_date) ?> </p>
+                                    <p class="ml-auto"> Views <?php echo $view ?> </p>
+
+
+
+
+                                </div>
                             </div>
-                            <div class="job-post-item-body mt-0 d-block d-md-flex">
-                                <p>Posted:<?php echo timePosted($job_post_date) ?> </p>
-                                <p class="ml-auto"> Views <?php echo $view ?> </p>
 
-
-
-
+                            <div class="ml-auto d-flex">
+                                <a href="job-details.php?job_id=<?php echo $id ?>" class="btn btn-outline-warning btn-sm py-2 mr-1">Apply
+                                    Job</a>
                             </div>
                         </div>
 
-                        <div class="ml-auto d-flex">
-                            <a href="job-details.php?job_id=<?php echo $id ?>"
-                                class="btn btn-outline-warning btn-sm py-2 mr-1">Apply
-                                Job</a>
-                        </div>
                     </div>
-
-                </div>
                 <?php } ?>
 
 
