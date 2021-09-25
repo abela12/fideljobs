@@ -4,6 +4,7 @@
 <head>
     <?php include 'include/header.php'
     ?>
+    <?php include 'action/jobSeekerProfile.php' ?>
 
 </head>
 
