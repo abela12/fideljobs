@@ -41,6 +41,8 @@ $select_skill = "SELECT * FROM `jobseeker_skill` WHERE `jobseeker_id` = '$jobsee
 $skill_result = fetchData($select_skill);
 while ($skill_data = mysqli_fetch_assoc($skill_result)) {
     $skill_name = $skill_data['skill_name'];
+    $skill_name_one = $skill_data['skill_name'];
+
     $skill_name = explode(",", $skill_name);
 }
 
