@@ -7,7 +7,9 @@ $row = $_POST['row'];
 $rowperpage = 5;
 
 // Selecting Jobs
-$query = 'SELECT * FROM job limit ' . $row . ',' . $rowperpage;
+$query = 'SELECT * FROM job  WHERE
+job_type LIKE ' % $job_type % '
+  OR (job_tags LIKE ' % $skill_name_one % ') AND job_preferred_sex LIKE ' % $Sex % ' limit ' . $row . ',' . $rowperpage;
 $result = mysqli_query($conn, $query);
 
 $html = '';
