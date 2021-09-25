@@ -30,10 +30,10 @@
                     <span class="nav-text">Jobs</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="my-feed.php">My Feed</a></li>
+                    <li><a href="my-feed.php">Best Matches</a></li>
                     <li><a href="saved-jobs.php">My Saved Jobs</a></li>
                     <li><a href="jobs-applied.php">Jobs Applied</a></li>
-                    <li><a href="best-matches.php">Best Matches</a></li>
+                    <!-- <li><a href="best-matches.php">Best Matches</a></li> -->
 
                 </ul>
             </li>
