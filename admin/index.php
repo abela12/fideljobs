@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
     echo  $username = $_POST['userName'];
     echo $password = $_POST['password'];
 
-    $result = mysqli_query($conn, "SELECT users.id as id, `username`, `email`, `password`, role.roleType as role, `userPhoto`, `role_id`, `status`, `date` 
+    $result = mysqli_query($conn, "SELECT users.id as id, `username`,`fName`,`lName` `email`, `password`, role.roleType as role, `userPhoto`, `role_id`, `status`, `date` 
     FROM `users` INNER JOIN role on users.role_id = role.id WHERE `username` = '$username' AND `password` = '$password'");
 
     // $result = mysqli_query($conn, $sql);
@@ -26,6 +26,10 @@ if (isset($_POST['login'])) {
                 //fill the result to session variable authentication
                 $_SESSION['id']  = $row['id'];
                 $_SESSION['username'] = $row['username'];
+                $_SESSION['fName'] = $row['fName'];
+
+                $_SESSION['lname'] = $row['lname'];
+
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['userPhoto'] = $row['userPhoto'];
 
@@ -44,9 +48,9 @@ if (isset($_POST['login'])) {
         } else {
             //IF theres no result
 ?> <script type="text/javascript">
-                alert("Username or Password Not Registered! Contact Your administrator.");
-                window.location = "index.php";
-            </script>
+alert("Username or Password Not Registered! Contact Your administrator.");
+window.location = "index.php";
+</script>
 <?php
 
         }
@@ -66,7 +70,8 @@ if (isset($_POST['login'])) {
                     <div class="nk-split nk-split-page nk-split-md">
                         <div class="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white">
                             <div class="absolute-top-right d-lg-none p-3 p-sm-5">
-                                <a href="#" class="toggle btn-white btn btn-icon btn-light" data-target="athPromo"><em class="icon ni ni-info"></em></a>
+                                <a href="#" class="toggle btn-white btn btn-icon btn-light" data-target="athPromo"><em
+                                        class="icon ni ni-info"></em></a>
                             </div>
                             <div class="nk-block nk-block-middle nk-auth-body">
 
@@ -84,27 +89,33 @@ if (isset($_POST['login'])) {
                                         <div class="form-label-group">
                                             <label class="form-label" for="default-01">Username</label>
 
-                                            <button type="button" class="btn btn-sm btn-primary" data-toggle="popover" title="እርዳታ" data-content="በ ሲስተም አድሚኒስትሬተር የትሰጠዎትን username ያስገቡ">
+                                            <button type="button" class="btn btn-sm btn-primary" data-toggle="popover"
+                                                title="እርዳታ" data-content="በ ሲስተም አድሚኒስትሬተር የትሰጠዎትን username ያስገቡ">
                                                 <span>help/እርዳታ</span>
                                             </button>
                                         </div>
-                                        <input type="text" name="userName" class="form-control form-control-lg" id="default-01" placeholder="Enter your username">
+                                        <input type="text" name="userName" class="form-control form-control-lg"
+                                            id="default-01" placeholder="Enter your username">
                                     </div><!-- .foem-group -->
                                     <div class="form-group">
                                         <div class="form-label-group">
                                             <label class="form-label" for="password">Passcode</label>
-                                            <a class="link link-primary link-sm" tabindex="-1" href="html/pages/auths/auth-reset.html">Forgot Code?</a>
+                                            <a class="link link-primary link-sm" tabindex="-1"
+                                                href="html/pages/auths/auth-reset.html">Forgot Code?</a>
                                         </div>
                                         <div class="form-control-wrap">
-                                            <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch" data-target="password">
+                                            <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch"
+                                                data-target="password">
                                                 <em class="passcode-icon icon-show icon ni ni-eye"></em>
                                                 <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                                             </a>
-                                            <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="Enter your passcode">
+                                            <input type="password" name="password" class="form-control form-control-lg"
+                                                id="password" placeholder="Enter your passcode">
                                         </div>
                                     </div><!-- .foem-group -->
                                     <div class="form-group">
-                                        <button type="submit" name="login" class="btn btn-lg btn-primary btn-block">Login</button>
+                                        <button type="submit" name="login"
+                                            class="btn btn-lg btn-primary btn-block">Login</button>
 
 
                                     </div>
