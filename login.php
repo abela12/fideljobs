@@ -11,6 +11,9 @@
 
 
 <?php
+$breadcrumb = "Login";
+$title = "Login <span>Form</span>";
+
 $demo = "not working";
 if (isset($_POST['loginnn'])) {
     $username = $_POST['username'];
