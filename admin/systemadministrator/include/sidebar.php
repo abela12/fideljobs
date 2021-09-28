@@ -35,6 +35,12 @@
                         </a>
                     </li><!-- .nk-menu-item -->
                     <li class="nk-menu-item">
+                        <a href="systemadministrator/manage_job.php" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-list"></em></span>
+                            <span class="nk-menu-text">Manage Job</span>
+                        </a>
+                    </li><!-- .nk-menu-item -->
+                    <li class="nk-menu-item">
                         <a href="systemadministrator/send_notification.php" class="nk-menu-link">
                             <span class="nk-menu-icon"><em
                                     class=" icon-status icon-status-info icon ni ni-bell"></em></span>
