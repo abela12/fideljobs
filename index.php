@@ -40,10 +40,12 @@
             <div class="container">
 
                 <!-- Search Freelancer Top Start -->
-                <?php include 'include/jobSearch.php' ?>
+                <?php //include 'include/jobSearch.php' 
+                ?>
 
                 <!-- Search Freelancer Top End -->
-                <?php include 'include/jobCategory.php' ?>
+                <?php //include 'include/jobCategory.php' 
+                ?>
 
 
 
