@@ -1,5 +1,6 @@
 <?php
 
+// trim form data
 function escape($string)
 {
 
@@ -11,6 +12,7 @@ function escape($string)
 // post ago function
 function timePosted($datetime, $full = false)
 {
+
   $now = new DateTime;
   $ago = new DateTime($datetime);
   $diff = $now->diff($ago);
@@ -37,4 +39,43 @@ function timePosted($datetime, $full = false)
 
   if (!$full) $string = array_slice($string, 0, 1);
   return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
+
+
+// Check Num Row
+function checkNumRow($sql)
+{
+  global $conn;
+
+  $check_num_row = mysqli_query($conn, $sql);
+  $check_num_row = mysqli_num_rows($check_num_row);
+  if ($check_num_row > 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Fetch sql data
+function fetchData($sql)
+{
+  global $conn;
+  $fetch_data = mysqli_query($conn, $sql);
+  $check_num = checkNumRow($sql);
+  if ($check_num) {
+    return $fetch_data;
+  } else {
+    return false;
+  }
+}
+// Calculate Deadline 
+function dateDifference($start_date, $end_date)
+{
+  // calculating the difference in timestamps 
+  $diff = strtotime($end_date) - strtotime($start_date);
+
+
+  // 1 day = 24 hours 
+  // 24 * 60 * 60 = 86400 seconds
+  return ceil($diff / 86400);
 }
