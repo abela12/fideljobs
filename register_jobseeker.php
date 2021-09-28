@@ -7,6 +7,10 @@
 
 <?php require_once "controllerUserData.php"; ?>
 
+<?php
+$breadcrumb = "Register";
+$title = "Register <span>Form</span>";
+?>
 
 <body>
 
