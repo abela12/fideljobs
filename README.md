@@ -61,5 +61,5 @@ After Starting Apache and MySQL in XAMPP, follow the following steps
 ## ✨ Technology Used
 
 - PHP
-- HTML & CSS
+- HTML,CSS & Javascript
 - MySql
